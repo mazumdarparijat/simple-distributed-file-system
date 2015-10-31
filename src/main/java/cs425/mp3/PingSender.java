@@ -201,9 +201,13 @@ public class PingSender extends Thread{
                 }
 
                 if (!ackReceived.get()) {
-                    this.infoMap.putIfAbsent(new Info(Info.InfoType.FAILED, pingMemberID), (int) FailureDetector
-                            .getSpreadTime(memberSet.size()) + this.time.intValue());
-                    this.recentlyLeft.putIfAbsent(pingMemberID,this.time.intValue()+3*memberSet.size());
+
+                    if (!pingMemberID.equals(introID)) {
+                        this.infoMap.putIfAbsent(new Info(Info.InfoType.FAILED, pingMemberID), (int) FailureDetector
+                                .getSpreadTime(memberSet.size()) + this.time.intValue());
+                        this.recentlyLeft.putIfAbsent(pingMemberID, this.time.intValue() + 3 * memberSet.size());
+                    }
+
                     if (pingMemberID.equals(introID)) {
                         System.out.println("[SENDER] [INFO] [" + System.currentTimeMillis() + "] : introducer " +
                                 "failure detected " + ": " + pingMemberID);

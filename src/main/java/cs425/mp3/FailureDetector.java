@@ -14,8 +14,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  */
 public class FailureDetector {
-    private final long PING_TIME_OUT=100;
-    public static final long PROTOCOL_TIME=500;
+    private final long PING_TIME_OUT=500;
+    public static final long PROTOCOL_TIME=1000;
     private final int MAX_NODES=10;
     private final int CONCURRENCY_LEVEL=2;
     private final float LOAD_FACTOR= (float) 0.75;
@@ -24,7 +24,7 @@ public class FailureDetector {
     private AtomicBoolean ackReceived=new AtomicBoolean(false);
     private AtomicBoolean rejoinSignal =new AtomicBoolean(false);
 
-	private Pid introducer_id;
+	protected Pid introducer_id;
     private final AtomicBoolean introducer_failed;
     protected ConcurrentHashMap<Info,Integer> infoBuffer;
     protected ConcurrentHashMap<String,Integer> recentlyLeft;

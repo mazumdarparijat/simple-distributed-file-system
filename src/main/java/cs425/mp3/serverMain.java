@@ -47,7 +47,7 @@ public class serverMain {
 	 * @return Options object
 	 */
 	private static Options createOptions() {
-		Option port = Option.builder("port").argName("serverPort").hasArg().desc("Port to run faliure detector server")
+		Option port = Option.builder("port").argName("serverPort").hasArg().desc("Port to run failure detector server")
 				.required().build();
 		Option i = Option.builder("i").desc("Describes the address and port of introducer").numberOfArgs(2).build();
 		Options op=new Options();

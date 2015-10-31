@@ -134,10 +134,21 @@ public class Transponder extends Thread{
                         .getMessage()
                         .toByteArray();
             } else {
-                sendBytes = Message.MessageBuilder
-                        .buildMissingNoticeMessage()
-                        .getMessage()
-                        .toByteArray();
+                // hack for introducer rejoin - accept all unknown pings
+                // add to memlist
+                if (idString.equals(introID)) {
+                    membershipSet.add(m.getMessageSenderID());
+                    sendBytes = Message.MessageBuilder
+                            .buildAckMessage(m.getMessageKey())
+                            .addInfoFromList(this.infoMap.keySet())
+                            .getMessage()
+                            .toByteArray();
+                } else {
+                    sendBytes = Message.MessageBuilder
+                            .buildMissingNoticeMessage()
+                            .getMessage()
+                            .toByteArray();
+                }
             }
 
             System.out.println("[RECEIVER] [INFO] ["+System.currentTimeMillis()+"] message sent : "
