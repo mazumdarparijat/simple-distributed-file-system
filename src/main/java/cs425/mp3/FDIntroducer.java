@@ -19,9 +19,9 @@ public class FDIntroducer extends FailureDetector {
 	 */
 	public FDIntroducer(int port){
         super();
-
         try {
             this.self_id=new Pid(InetAddress.getLocalHost().getHostName(),port,0);
+            this.introducer_id=this.self_id;
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
