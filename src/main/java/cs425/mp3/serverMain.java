@@ -2,6 +2,8 @@ package cs425.mp3;
 
 import java.io.IOException;
 
+import cs425.mp3.FailureDetector.FDIntroducer;
+import cs425.mp3.FailureDetector.FailureDetector;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;

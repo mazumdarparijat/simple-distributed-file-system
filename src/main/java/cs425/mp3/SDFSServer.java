@@ -1,5 +1,7 @@
 package cs425.mp3;
 
+import cs425.mp3.FailureDetector.FailureDetector;
+
 /**
  * Class for SDFSServer Module
  *
