@@ -1,4 +1,6 @@
-package cs425.mp3;
+package cs425.mp3.FailureDetector;
+
+import cs425.mp3.Pid;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -31,7 +33,7 @@ public class FDIntroducer extends FailureDetector {
 
     /**
      * Start FD for introducer
-     * @see cs425.mp3.FailureDetector#startFD()
+     * @see FailureDetector#startFD()
      */
     @Override
     public boolean startFD() {

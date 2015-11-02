@@ -1,4 +1,9 @@
-package cs425.mp3;
+package cs425.mp3.FailureDetector;
+
+import cs425.mp3.FailureDetector.FailureDetector;
+import cs425.mp3.FailureDetector.Info;
+import cs425.mp3.FailureDetector.Message;
+import cs425.mp3.Pid;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

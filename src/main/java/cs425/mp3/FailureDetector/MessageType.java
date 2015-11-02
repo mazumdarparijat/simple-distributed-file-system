@@ -1,4 +1,4 @@
-package cs425.mp3;
+package cs425.mp3.FailureDetector;
 
 import java.io.IOException;
 

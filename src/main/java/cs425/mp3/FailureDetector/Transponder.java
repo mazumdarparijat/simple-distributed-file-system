@@ -1,10 +1,15 @@
-package cs425.mp3;
+package cs425.mp3.FailureDetector;
+
+import cs425.mp3.FailureDetector.FailureDetector;
+import cs425.mp3.FailureDetector.Info;
+import cs425.mp3.FailureDetector.Message;
+import cs425.mp3.FailureDetector.MessageType;
+import cs425.mp3.Pid;
 
 import java.io.IOException;
 import java.net.*;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -12,7 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Receiver Class
  */
 public class Transponder extends Thread{
-    private static final int MAX_BYTE_LENGTH =1024;
+    private static final int MAX_BYTE_LENGTH=1024;
 	private final DatagramSocket socket;
     private final String idString;
     private final String introID;
@@ -124,7 +129,7 @@ public class Transponder extends Thread{
                 +new String(receivePacket.getData(),0,receivePacket.getLength()));
 
         Message m = Message.extractMessage(receivePacket.getData(),receivePacket.getLength());
-        if (m.type==MessageType.PING) {
+        if (m.type== MessageType.PING) {
             this.processInfoPackets(m);
             byte[] sendBytes;
             if (membershipSet.contains(m.getMessageSenderID())) {

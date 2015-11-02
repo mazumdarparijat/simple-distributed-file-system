@@ -1,4 +1,6 @@
-package cs425.mp3;
+package cs425.mp3.FailureDetector;
+
+import cs425.mp3.Pid;
 
 import java.io.*;
 import java.net.*;
