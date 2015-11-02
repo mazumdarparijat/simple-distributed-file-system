@@ -20,6 +20,7 @@ public class sdfsserverMain {
     private static boolean isIntroducer=false;
     public static FailureDetector FD;
     public static SDFSServer FileServer;
+    public static ElectionService ES;
 	/**
 	 * Formats commandline inputs and flags
 	 */
@@ -65,6 +66,7 @@ public class sdfsserverMain {
     public static void setupServices() {
     	FD=new FailureDetector(sdfsserverMain.port,sdfsserverMain.intro_address,sdfsserverMain.intro_port);
     	FileServer = new SDFSServer();
+    	ES=new ElectionService();
     }
 
 	public static void main(String [] args) throws IOException, InterruptedException {
