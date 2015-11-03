@@ -3,6 +3,7 @@ package cs425.mp3;
 import java.io.IOException;
 import cs425.mp3.ElectionService.ElectionService;
 import cs425.mp3.FailureDetector.FailureDetector;
+import cs425.mp3.FileServer.FileServer;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
