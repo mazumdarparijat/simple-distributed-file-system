@@ -3,6 +3,7 @@ package cs425.mp3;
 import java.io.IOException;
 
 import cs425.mp3.FailureDetector.FailureDetector;
+import cs425.mp3.FileServer.FileServer;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -20,7 +21,7 @@ public class sdfsserverMain {
     private static String intro_address="";
     private static boolean isIntroducer=false;
     public static FailureDetector FD;
-    public static SDFSServer FileServer;
+    public static FileServer FS;
 	/**
 	 * Formats commandline inputs and flags
 	 */
@@ -65,7 +66,7 @@ public class sdfsserverMain {
      */
     public static void setupServices() {
     	FD=new FailureDetector(sdfsserverMain.port,sdfsserverMain.intro_address,sdfsserverMain.intro_port);
-    	FileServer = new SDFSServer();
+    	FS = new FileServer(9100);
     }
 
 	public static void main(String [] args) throws IOException, InterruptedException {
