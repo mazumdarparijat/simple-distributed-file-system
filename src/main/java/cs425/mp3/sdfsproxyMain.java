@@ -3,6 +3,7 @@ package cs425.mp3;
 import java.io.IOException;
 
 import cs425.mp3.FailureDetector.FDIntroducer;
+import cs425.mp3.ElectionService.MasterTracker;
 import cs425.mp3.FailureDetector.FailureDetector;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -15,11 +16,14 @@ import org.apache.commons.cli.ParseException;
 /**Main class for FD
  * 
  */
-public class serverMain {
-    private static int port=0;
-    private static int intro_port=0;
-    private static String intro_address="";
+public class sdfsproxyMain {
+    private static int FDport=0;
+    public static int intro_port=0;
+    public static String intro_address="";
     private static boolean isIntroducer=false;
+    public static FailureDetector FD;
+    public static SDFSServer FileServer;
+    public static MasterTracker MT;
 	/**
 	 * Formats commandline inputs and flags
 	 */
@@ -33,28 +37,17 @@ public class serverMain {
 			printHelp(op);
 			e.printStackTrace();
 		}
-		if (!line.hasOption("i")) {	
-			serverMain.port = Integer.parseInt(line.getOptionValue("port"));
-			isIntroducer=true;
-		}
-		else {
-            isIntroducer=false;
-			serverMain.port = Integer.parseInt(line.getOptionValue("port"));
-			serverMain.intro_address=line.getOptionValues("i")[0];
-			serverMain.intro_port=Integer.parseInt(line.getOptionValues("i")[1]);
-		}
+        isIntroducer=true;
+		sdfsproxyMain.FDport = Integer.parseInt(line.getOptionValue("port"));
 	}
-
 	/** Creates the required options to look for in command line arguments
 	 * @return Options object
 	 */
 	private static Options createOptions() {
-		Option port = Option.builder("port").argName("serverPort").hasArg().desc("Port to run failure detector server")
+		Option port = Option.builder("port").argName("serverPort").hasArg().desc("Port to run faliure detector server")
 				.required().build();
-		Option i = Option.builder("i").desc("Describes the address and port of introducer").numberOfArgs(2).build();
 		Options op=new Options();
 		op.addOption(port);
-		op.addOption(i);
 		return op;
 	}
 
@@ -68,19 +61,33 @@ public class serverMain {
 
     /**Start FD module
      * @return
+     * @throws IOException 
      */
-    private static FailureDetector startNode() {
-        if (serverMain.isIntroducer)
-            return new FDIntroducer(serverMain.port);
-        else
-            return new FailureDetector(serverMain.port,serverMain.intro_address,serverMain.intro_port);
+    public static void setupServices() throws IOException {
+    	FD=new FDIntroducer(sdfsproxyMain.FDport);
+    	MT=new MasterTracker(FDport+1);
     }
 
-	public static void main(String [] args) throws IOException {
+	public static void main(String [] args) throws IOException, InterruptedException {
 		FormatCommandLineInputs(args);
-        boolean restart=serverMain.startNode().startFD();
-        while (restart) {
-            restart=serverMain.startNode().startFD();
-        }
+		setupServices();
+		//Start Faliure Detector
+		FailureDetectorThread FDThread = new FailureDetectorThread(FD);
+		FDThread.setDaemon(true);
+		FDThread.start();
+		//Start Faliure Detector
+		MasterTrackerThread MTThread = new MasterTrackerThread(MT);
+		MTThread.setDaemon(true);
+		MTThread.start();
+		
+		while(true){
+			if(MT.getMaster()!=null){
+				System.err.println("Master "+MT.getMaster());
+			}
+			else{
+				System.err.println("Master Null");
+			}
+			Thread.sleep(1000);
+		}
 	}
 }

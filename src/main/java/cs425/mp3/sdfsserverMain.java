@@ -1,7 +1,7 @@
 package cs425.mp3;
 
 import java.io.IOException;
-
+import cs425.mp3.ElectionService.ElectionService;
 import cs425.mp3.FailureDetector.FailureDetector;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -15,12 +15,11 @@ import org.apache.commons.cli.ParseException;
  * 
  */
 public class sdfsserverMain {
-    private static int port=0;
-    private static int intro_port=0;
-    private static String intro_address="";
+    private static int FDport=0;
+    public static int intro_port=0;
+    public static String intro_address="";
     private static boolean isIntroducer=false;
     public static FailureDetector FD;
-    public static SDFSServer FileServer;
     public static ElectionService ES;
 	/**
 	 * Formats commandline inputs and flags
@@ -36,7 +35,7 @@ public class sdfsserverMain {
 			e.printStackTrace();
 		}
         isIntroducer=false;
-		sdfsserverMain.port = Integer.parseInt(line.getOptionValue("port"));
+		sdfsserverMain.FDport = Integer.parseInt(line.getOptionValue("port"));
 		sdfsserverMain.intro_address=line.getOptionValues("i")[0];
 		sdfsserverMain.intro_port=Integer.parseInt(line.getOptionValues("i")[1]);
 	}
@@ -63,26 +62,33 @@ public class sdfsserverMain {
 
     /**Start FD module
      * @return
+     * @throws IOException 
      */
-    public static void setupServices() {
-    	FD=new FailureDetector(sdfsserverMain.port,sdfsserverMain.intro_address,sdfsserverMain.intro_port);
-    	FileServer = new SDFSServer();
-    	ES=new ElectionService();
+    public static void setupServices() throws IOException {
+    	FD=new FailureDetector(sdfsserverMain.FDport,sdfsserverMain.intro_address,sdfsserverMain.intro_port);
+    	ES=new ElectionService(FDport+1);
     }
 
 	public static void main(String [] args) throws IOException, InterruptedException {
 		FormatCommandLineInputs(args);
 		setupServices();
 		//Start Faliure Detector
-		FailureDetectorThread FDThread = new FailureDetectorThread();
+		FailureDetectorThread FDThread = new FailureDetectorThread(FD);
 		FDThread.setDaemon(true);
 		FDThread.start();
-		//Start HDFS server Object
-		SDFSServerThread FSThread = new SDFSServerThread();
-		FSThread.setDaemon(true);
-		FSThread.start();
-		
+		//Start Election Service
+		ElectionServiceThread ESThread = new ElectionServiceThread(ES);
+		ESThread.setDaemon(true);
+		ESThread.start();
 		//Wait for Failure Detector
-		FDThread.join();
+		while(true){
+			if(ES.getMaster()!=null){
+				System.err.println("Master "+ES.getMaster());
+			}
+			else{
+				System.err.println("Master Null");
+			}
+			Thread.sleep(1000);
+		}
 	}
 }

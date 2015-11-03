@@ -1,0 +1,6 @@
+[MAIN] [INFO] [1446519173217] : node created with id : Ashus-MacBook-Pro.local_9005_1446519173217
+[MAIN] [MEM_ADD] [1446519173217] : Ashus-MacBook-Pro.local_9000_0
+[Election]: Setting initial master
+[Election]: Sent Msg: M Ashus-MacBook-Pro.local_9005_1446519173217
+[MAIN] [INFO] Cannot connect to introducer. Will try again in a while.
+[ERROR]: Server not running

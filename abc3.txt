@@ -1,0 +1,1993 @@
+[MAIN] [INFO] [1446518930144] : node created with id : Ashus-MacBook-Pro.local_9010_1446518930144
+[MAIN] [MEM_ADD] [1446518930144] : Ashus-MacBook-Pro.local_9000_0
+[Election]: Setting initial master
+[Election]: Sent Msg: M Ashus-MacBook-Pro.local_9010_1446518930144
+[MAIN] [INFO] TCP connection established.
+[Election]: Initial Master Set
+[MAIN] [INFO] [1446518930177] : tcp connection initiated
+[MAIN] [MEM_ADD] [1446518930178] : Ashus-MacBook-Pro.local_9005_1446518911716
+[MAIN] [MEM_ADD] [1446518930178] : Ashus-MacBook-Pro.local_9015_1446518842765
+[MAIN] [INFO] [1446518930180] : udp socket initiated
+[MAIN] [INFO] [1446518930181] : receiver thread started
+[RECEIVER] [INFO] [1446518930182] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518932187] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518933918] Message Received : P 101 Ashus-MacBook-Pro.local_9000_0;J Ashus-MacBook-Pro.local_9010_1446518930144
+[RECEIVER] [INFO] [1446518933923] message sent : A 101
+[RECEIVER] [INFO] [1446518933923] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518934805] Message Received : P 87 Ashus-MacBook-Pro.local_9015_1446518842765;J Ashus-MacBook-Pro.local_9010_1446518930144
+[RECEIVER] [INFO] [1446518934805] message sent : A 87
+[RECEIVER] [INFO] [1446518934805] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518934823] Message Received : P 20 Ashus-MacBook-Pro.local_9005_1446518911716;J Ashus-MacBook-Pro.local_9010_1446518930144
+[RECEIVER] [INFO] [1446518934824] message sent : A 20
+[RECEIVER] [INFO] [1446518934824] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518935810] Message Received : P 88 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518935810] message sent : A 88
+[RECEIVER] [INFO] [1446518935810] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518935920] Message Received : P 103 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518935920] message sent : A 103
+[RECEIVER] [INFO] [1446518935921] Waiting to receive next packet
+[MAIN] [INFO] [1446518935939] : sender thread added
+Press any key followed by enter to leave
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518935942] message sent  : P 1 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518935942] Message Received : A 1
+[RECEIVER] [INFO] [1446518935942] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518936950] message sent  : P 2 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518936955] Message Received : A 2
+[RECEIVER] [INFO] [1446518936955] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518937838] Message Received : P 23 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518937839] message sent : A 23
+[RECEIVER] [INFO] [1446518937839] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518937928] Message Received : P 105 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518937928] message sent : A 105
+[RECEIVER] [INFO] [1446518937929] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518937952] message sent  : P 3 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518937953] Message Received : A 3
+[RECEIVER] [INFO] [1446518937953] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518938953] message sent  : P 4 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518938953] Message Received : A 4
+[RECEIVER] [INFO] [1446518938953] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518939840] Message Received : P 25 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518939841] message sent : A 25
+[RECEIVER] [INFO] [1446518939841] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518939955] message sent  : P 5 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518939956] Message Received : A 5
+[RECEIVER] [INFO] [1446518939956] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518940824] Message Received : P 93 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518940824] message sent : A 93
+[RECEIVER] [INFO] [1446518940824] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518940957] message sent  : P 6 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518940958] Message Received : A 6
+[RECEIVER] [INFO] [1446518940958] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518941938] Message Received : P 109 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518941939] message sent : A 109
+[RECEIVER] [INFO] [1446518941939] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518941961] message sent  : P 7 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518941961] Message Received : A 7
+[RECEIVER] [INFO] [1446518941962] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518942829] Message Received : P 95 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518942830] message sent : A 95
+[RECEIVER] [INFO] [1446518942830] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518942843] Message Received : P 28 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518942843] message sent : A 28
+[RECEIVER] [INFO] [1446518942844] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518942963] message sent  : P 8 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518942963] Message Received : A 8
+[RECEIVER] [INFO] [1446518942964] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518943968] message sent  : P 9 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518943969] Message Received : A 9
+[RECEIVER] [INFO] [1446518943969] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518944834] Message Received : P 97 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518944834] message sent : A 97
+[RECEIVER] [INFO] [1446518944834] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518944947] Message Received : P 112 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518944948] message sent : A 112
+[RECEIVER] [INFO] [1446518944948] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518944969] message sent  : P 10 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518944970] Message Received : A 10
+[RECEIVER] [INFO] [1446518944970] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518945971] message sent  : P 11 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518945972] Message Received : A 11
+[RECEIVER] [INFO] [1446518945972] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518946972] message sent  : P 12 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518946972] Message Received : A 12
+[RECEIVER] [INFO] [1446518946972] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518947844] Message Received : P 100 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518947844] message sent : A 100
+[RECEIVER] [INFO] [1446518947844] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518947859] Message Received : P 33 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518947860] message sent : A 33
+[RECEIVER] [INFO] [1446518947860] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518947954] Message Received : P 115 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518947954] message sent : A 115
+[RECEIVER] [INFO] [1446518947955] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518947978] message sent  : P 13 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518947978] Message Received : A 13
+[RECEIVER] [INFO] [1446518947978] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518948860] Message Received : P 34 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518948860] message sent : A 34
+[RECEIVER] [INFO] [1446518948860] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518948976] message sent  : P 14 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518948977] Message Received : A 14
+[RECEIVER] [INFO] [1446518948977] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518949979] message sent  : P 15 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518949979] Message Received : A 15
+[RECEIVER] [INFO] [1446518949979] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518950983] message sent  : P 16 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518950984] Message Received : A 16
+[RECEIVER] [INFO] [1446518950984] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518951849] Message Received : P 104 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518951849] message sent : A 104
+[RECEIVER] [INFO] [1446518951849] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518951969] Message Received : P 119 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518951970] message sent : A 119
+[RECEIVER] [INFO] [1446518951970] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518951988] message sent  : P 17 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518951989] Message Received : A 17
+[RECEIVER] [INFO] [1446518951989] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518952992] message sent  : P 18 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518952992] Message Received : A 18
+[RECEIVER] [INFO] [1446518952992] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518953871] Message Received : P 39 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518953871] message sent : A 39
+[RECEIVER] [INFO] [1446518953871] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518953979] Message Received : P 121 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518953980] message sent : A 121
+[RECEIVER] [INFO] [1446518953981] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518953993] message sent  : P 19 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518953999] Message Received : A 19
+[RECEIVER] [INFO] [1446518953999] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518954852] Message Received : P 107 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518954853] message sent : A 107
+[RECEIVER] [INFO] [1446518954853] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518954871] Message Received : P 40 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518954871] message sent : A 40
+[RECEIVER] [INFO] [1446518954871] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518954995] message sent  : P 20 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518954995] Message Received : A 20
+[RECEIVER] [INFO] [1446518954996] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518955984] Message Received : P 123 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518955984] message sent : A 123
+[RECEIVER] [INFO] [1446518955984] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518955996] message sent  : P 21 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518955997] Message Received : A 21
+[RECEIVER] [INFO] [1446518955997] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518956997] message sent  : P 22 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518956998] Message Received : A 22
+[RECEIVER] [INFO] [1446518956998] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518958002] message sent  : P 23 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518958003] Message Received : A 23
+[RECEIVER] [INFO] [1446518958003] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518958858] Message Received : P 111 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518958858] message sent : A 111
+[RECEIVER] [INFO] [1446518958858] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518959005] message sent  : P 24 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518959005] Message Received : A 24
+[RECEIVER] [INFO] [1446518959005] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518959879] Message Received : P 45 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518959879] message sent : A 45
+[RECEIVER] [INFO] [1446518959879] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518959990] Message Received : P 127 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518959991] message sent : A 127
+[RECEIVER] [INFO] [1446518959991] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518960009] message sent  : P 25 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518960009] Message Received : A 25
+[RECEIVER] [INFO] [1446518960009] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518960879] Message Received : P 46 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518960879] message sent : A 46
+[RECEIVER] [INFO] [1446518960879] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518961009] message sent  : P 26 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518961011] Message Received : A 26
+[RECEIVER] [INFO] [1446518961011] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518961867] Message Received : P 114 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518961867] message sent : A 114
+[RECEIVER] [INFO] [1446518961868] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518961992] Message Received : P 129 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518961992] message sent : A 129
+[RECEIVER] [INFO] [1446518961993] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518962010] message sent  : P 27 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518962010] Message Received : A 27
+[RECEIVER] [INFO] [1446518962010] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518963015] message sent  : P 28 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518963015] Message Received : A 28
+[RECEIVER] [INFO] [1446518963016] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518964017] message sent  : P 29 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518964018] Message Received : A 29
+[RECEIVER] [INFO] [1446518964018] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518964877] Message Received : P 117 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518964877] message sent : A 117
+[RECEIVER] [INFO] [1446518964877] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518965021] message sent  : P 30 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518965021] Message Received : A 30
+[RECEIVER] [INFO] [1446518965022] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518965879] Message Received : P 118 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518965879] message sent : A 118
+[RECEIVER] [INFO] [1446518965879] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518965893] Message Received : P 51 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518965893] message sent : A 51
+[RECEIVER] [INFO] [1446518965893] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518966023] message sent  : P 31 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518966023] Message Received : A 31
+[RECEIVER] [INFO] [1446518966023] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518967011] Message Received : P 134 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518967011] message sent : A 134
+[RECEIVER] [INFO] [1446518967011] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518967024] message sent  : P 32 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518967024] Message Received : A 32
+[RECEIVER] [INFO] [1446518967024] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518967898] Message Received : P 53 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518967898] message sent : A 53
+[RECEIVER] [INFO] [1446518967898] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518968026] message sent  : P 33 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518968027] Message Received : A 33
+[RECEIVER] [INFO] [1446518968027] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518969029] message sent  : P 34 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518969029] Message Received : A 34
+[RECEIVER] [INFO] [1446518969029] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518969889] Message Received : P 122 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518969889] message sent : A 122
+[RECEIVER] [INFO] [1446518969889] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518970023] Message Received : P 137 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518970023] message sent : A 137
+[RECEIVER] [INFO] [1446518970024] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518970032] message sent  : P 35 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518970032] Message Received : A 35
+[RECEIVER] [INFO] [1446518970032] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518971037] message sent  : P 36 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518971037] Message Received : A 36
+[RECEIVER] [INFO] [1446518971037] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518971909] Message Received : P 57 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518971909] message sent : A 57
+[RECEIVER] [INFO] [1446518971909] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518972030] Message Received : P 139 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518972031] message sent : A 139
+[RECEIVER] [INFO] [1446518972031] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518972037] message sent  : P 37 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518972038] Message Received : A 37
+[RECEIVER] [INFO] [1446518972038] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518972896] Message Received : P 125 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518972896] message sent : A 125
+[RECEIVER] [INFO] [1446518972896] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518973039] message sent  : P 38 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518973040] Message Received : A 38
+[RECEIVER] [INFO] [1446518973040] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518974039] Message Received : P 141 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518974039] message sent : A 141
+[RECEIVER] [INFO] [1446518974039] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518974041] message sent  : P 39 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518974041] Message Received : A 39
+[RECEIVER] [INFO] [1446518974041] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518974919] Message Received : P 60 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518974919] message sent : A 60
+[RECEIVER] [INFO] [1446518974919] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518975044] message sent  : P 40 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518975044] Message Received : A 40
+[RECEIVER] [INFO] [1446518975044] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518976048] message sent  : P 41 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518976049] Message Received : A 41
+[RECEIVER] [INFO] [1446518976049] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518976908] Message Received : P 129 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518976908] message sent : A 129
+[RECEIVER] [INFO] [1446518976908] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518976924] Message Received : P 62 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518976924] message sent : A 62
+[RECEIVER] [INFO] [1446518976924] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518977049] message sent  : P 42 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518977049] Message Received : A 42
+[RECEIVER] [INFO] [1446518977049] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518977909] Message Received : P 130 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518977909] message sent : A 130
+[RECEIVER] [INFO] [1446518977909] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518978050] message sent  : P 43 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518978051] Message Received : A 43
+[RECEIVER] [INFO] [1446518978051] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518978932] Message Received : P 64 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518978932] message sent : A 64
+[RECEIVER] [INFO] [1446518978933] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518979054] message sent  : P 44 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518979055] Message Received : P 146 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518979055] message sent : A 146
+[RECEIVER] [INFO] [1446518979055] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518979055] Message Received : A 44
+[RECEIVER] [INFO] [1446518979055] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518980059] message sent  : P 45 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518980060] Message Received : A 45
+[RECEIVER] [INFO] [1446518980060] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518980921] Message Received : P 133 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518980921] message sent : A 133
+[RECEIVER] [INFO] [1446518980921] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518981064] message sent  : P 46 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518981065] Message Received : A 46
+[RECEIVER] [INFO] [1446518981065] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518982066] message sent  : P 47 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518982067] Message Received : P 149 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518982067] message sent : A 149
+[RECEIVER] [INFO] [1446518982067] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518982067] Message Received : A 47
+[RECEIVER] [INFO] [1446518982067] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518982937] Message Received : P 68 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518982938] message sent : A 68
+[RECEIVER] [INFO] [1446518982938] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518983068] message sent  : P 48 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518983068] Message Received : A 48
+[RECEIVER] [INFO] [1446518983068] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518983927] Message Received : P 136 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518983927] message sent : A 136
+[RECEIVER] [INFO] [1446518983927] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518984073] message sent  : P 49 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518984073] Message Received : P 151 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518984073] message sent : A 151
+[RECEIVER] [INFO] [1446518984073] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518984073] Message Received : A 49
+[RECEIVER] [INFO] [1446518984073] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518985078] message sent  : P 50 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518985078] Message Received : A 50
+[RECEIVER] [INFO] [1446518985078] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518986079] message sent  : P 51 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518986080] Message Received : A 51
+[RECEIVER] [INFO] [1446518986080] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518986949] Message Received : P 72 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518986949] message sent : A 72
+[RECEIVER] [INFO] [1446518986949] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518987084] message sent  : P 52 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518987084] Message Received : A 52
+[RECEIVER] [INFO] [1446518987085] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518988087] message sent  : P 53 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518988088] Message Received : P 155 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518988088] message sent : A 155
+[RECEIVER] [INFO] [1446518988088] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518988088] Message Received : A 53
+[RECEIVER] [INFO] [1446518988088] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518988937] Message Received : P 141 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518988937] message sent : A 141
+[RECEIVER] [INFO] [1446518988937] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518989090] message sent  : P 54 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518989091] Message Received : A 54
+[RECEIVER] [INFO] [1446518989091] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518989964] Message Received : P 75 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518989964] message sent : A 75
+[RECEIVER] [INFO] [1446518989964] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518990092] message sent  : P 55 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518990092] Message Received : P 157 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518990092] message sent : A 157
+[RECEIVER] [INFO] [1446518990093] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518990093] Message Received : A 55
+[RECEIVER] [INFO] [1446518990093] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518991097] message sent  : P 56 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518991099] Message Received : A 56;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [MEM_ADD] [1446518991099] : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518991099] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518991944] Message Received : P 144 Ashus-MacBook-Pro.local_9015_1446518842765;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518991944] message sent : A 144;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518991944] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518991972] Message Received : P 77 Ashus-MacBook-Pro.local_9005_1446518911716;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518991972] message sent : A 77;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518991972] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {J Ashus-MacBook-Pro.local_9020_1446518990731=61}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518992099] message sent  : P 57 Ashus-MacBook-Pro.local_9010_1446518930144;J Ashus-MacBook-Pro.local_9020_1446518990731 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518992099] Message Received : A 57;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518992099] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {J Ashus-MacBook-Pro.local_9020_1446518990731=61}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518993101] message sent  : P 58 Ashus-MacBook-Pro.local_9010_1446518930144;J Ashus-MacBook-Pro.local_9020_1446518990731 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518993101] Message Received : A 58;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518993101] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518993951] Message Received : P 146 Ashus-MacBook-Pro.local_9015_1446518842765;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518993952] message sent : A 146;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518993952] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518993973] Message Received : P 79 Ashus-MacBook-Pro.local_9005_1446518911716;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518993973] message sent : A 79;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518993974] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {J Ashus-MacBook-Pro.local_9020_1446518990731=61}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518994104] message sent  : P 59 Ashus-MacBook-Pro.local_9010_1446518930144;J Ashus-MacBook-Pro.local_9020_1446518990731 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518994104] Message Received : P 161 Ashus-MacBook-Pro.local_9000_0;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518994105] message sent : A 161;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518994105] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518994105] Message Received : A 59;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518994105] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {J Ashus-MacBook-Pro.local_9020_1446518990731=61}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518995108] message sent  : P 60 Ashus-MacBook-Pro.local_9010_1446518930144;J Ashus-MacBook-Pro.local_9020_1446518990731 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518995109] Message Received : A 60;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518995109] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {J Ashus-MacBook-Pro.local_9020_1446518990731=61}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518996109] message sent  : P 61 Ashus-MacBook-Pro.local_9010_1446518930144;J Ashus-MacBook-Pro.local_9020_1446518990731 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518996110] Message Received : P 163 Ashus-MacBook-Pro.local_9000_0;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518996110] message sent : A 163;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518996110] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518996111] Message Received : A 61
+[RECEIVER] [INFO] [1446518996111] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {J Ashus-MacBook-Pro.local_9020_1446518990731=61}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518997109] message sent  : P 62 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518997110] Message Received : A 62
+[RECEIVER] [INFO] [1446518997110] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518997778] Message Received : P 1 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518997779] message sent : A 1
+[RECEIVER] [INFO] [1446518997779] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518997978] Message Received : P 83 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518997978] message sent : A 83
+[RECEIVER] [INFO] [1446518997978] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518998113] message sent  : P 63 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446518998113] Message Received : A 63;J Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446518998113] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446518999119] message sent  : P 64 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446518999119] Message Received : A 64
+[RECEIVER] [INFO] [1446518999119] Waiting to receive next packet
+[RECEIVER] [INFO] [1446518999973] Message Received : P 152 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446518999973] message sent : A 152
+[RECEIVER] [INFO] [1446518999973] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519000120] message sent  : P 65 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519000122] Message Received : A 65
+[RECEIVER] [INFO] [1446519000122] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519001122] message sent  : P 66 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519001122] Message Received : A 66
+[RECEIVER] [INFO] [1446519001123] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519002124] message sent  : P 67 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519002124] Message Received : A 67
+[RECEIVER] [INFO] [1446519002124] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519002978] Message Received : P 155 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519002978] message sent : A 155
+[RECEIVER] [INFO] [1446519002978] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519003124] Message Received : P 170 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519003124] message sent : A 170
+[RECEIVER] [INFO] [1446519003125] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519003126] message sent  : P 68 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519003126] Message Received : A 68
+[RECEIVER] [INFO] [1446519003126] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519003794] Message Received : P 7 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519003794] message sent : A 7
+[RECEIVER] [INFO] [1446519003794] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519003998] Message Received : P 89 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519003998] message sent : A 89
+[RECEIVER] [INFO] [1446519003998] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519004128] message sent  : P 69 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519004129] Message Received : A 69
+[RECEIVER] [INFO] [1446519004129] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519005128] message sent  : P 70 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519005128] Message Received : A 70
+[RECEIVER] [INFO] [1446519005128] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519005129] Message Received : P 172 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519005129] message sent : A 172
+[RECEIVER] [INFO] [1446519005129] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519005984] Message Received : P 158 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519005984] message sent : A 158
+[RECEIVER] [INFO] [1446519005984] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519006006] Message Received : P 91 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519006006] message sent : A 91
+[RECEIVER] [INFO] [1446519006006] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519006128] message sent  : P 71 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519006128] Message Received : A 71
+[RECEIVER] [INFO] [1446519006129] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519007129] message sent  : P 72 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519007131] Message Received : A 72
+[RECEIVER] [INFO] [1446519007131] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519008131] message sent  : P 73 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519008132] Message Received : A 73
+[RECEIVER] [INFO] [1446519008132] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519008812] Message Received : P 12 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519008812] message sent : A 12
+[RECEIVER] [INFO] [1446519008812] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519009136] message sent  : P 74 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519009137] Message Received : A 74
+[RECEIVER] [INFO] [1446519009137] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519009998] Message Received : P 162 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519009998] message sent : A 162
+[RECEIVER] [INFO] [1446519009998] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519010013] Message Received : P 95 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519010013] message sent : A 95
+[RECEIVER] [INFO] [1446519010013] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519010139] message sent  : P 75 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519010140] Message Received : A 75
+[RECEIVER] [INFO] [1446519010140] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519010812] Message Received : P 14 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519010812] message sent : A 14
+[RECEIVER] [INFO] [1446519010812] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519011142] message sent  : P 76 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519011143] Message Received : A 76
+[RECEIVER] [INFO] [1446519011143] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519011144] Message Received : P 178 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519011144] message sent : A 178
+[RECEIVER] [INFO] [1446519011144] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519012146] message sent  : P 77 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519012146] Message Received : A 77
+[RECEIVER] [INFO] [1446519012147] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519013148] message sent  : P 78 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519013148] Message Received : P 180 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519013148] message sent : A 180
+[RECEIVER] [INFO] [1446519013148] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519013149] Message Received : A 78
+[RECEIVER] [INFO] [1446519013149] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519014014] Message Received : P 166 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519014014] message sent : A 166
+[RECEIVER] [INFO] [1446519014014] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519014153] message sent  : P 79 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519014153] Message Received : A 79
+[RECEIVER] [INFO] [1446519014153] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519015156] message sent  : P 80 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519015157] Message Received : A 80
+[RECEIVER] [INFO] [1446519015157] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519016023] Message Received : P 101 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519016023] message sent : A 101
+[RECEIVER] [INFO] [1446519016024] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519016159] message sent  : P 81 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519016159] Message Received : A 81
+[RECEIVER] [INFO] [1446519016159] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519016818] Message Received : P 20 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519016818] message sent : A 20
+[RECEIVER] [INFO] [1446519016818] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519017163] message sent  : P 82 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519017163] Message Received : A 82
+[RECEIVER] [INFO] [1446519017164] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519017819] Message Received : P 21 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519017819] message sent : A 21
+[RECEIVER] [INFO] [1446519017819] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519018028] Message Received : P 103 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519018028] message sent : A 103
+[RECEIVER] [INFO] [1446519018028] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519018168] message sent  : P 83 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519018168] Message Received : P 185 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519018169] message sent : A 185
+[RECEIVER] [INFO] [1446519018169] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519018169] Message Received : A 83
+[RECEIVER] [INFO] [1446519018169] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519019169] message sent  : P 84 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519019170] Message Received : A 84
+[RECEIVER] [INFO] [1446519019170] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519020037] Message Received : P 172 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519020037] message sent : A 172
+[RECEIVER] [INFO] [1446519020037] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519020169] message sent  : P 85 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519020170] Message Received : A 85
+[RECEIVER] [INFO] [1446519020171] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519021171] message sent  : P 86 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519021173] Message Received : A 86
+[RECEIVER] [INFO] [1446519021173] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519022176] message sent  : P 87 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519022177] Message Received : A 87
+[RECEIVER] [INFO] [1446519022177] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519023052] Message Received : P 175 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519023052] message sent : A 175
+[RECEIVER] [INFO] [1446519023052] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519023179] message sent  : P 88 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519023179] Message Received : P 190 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519023179] message sent : A 190
+[RECEIVER] [INFO] [1446519023179] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519023179] Message Received : A 88
+[RECEIVER] [INFO] [1446519023179] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519024056] Message Received : P 109 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519024056] message sent : A 109
+[RECEIVER] [INFO] [1446519024056] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519024185] message sent  : P 89 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519024186] Message Received : A 89
+[RECEIVER] [INFO] [1446519024186] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519024832] Message Received : P 28 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519024832] message sent : A 28
+[RECEIVER] [INFO] [1446519024832] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519025189] message sent  : P 90 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519025190] Message Received : A 90
+[RECEIVER] [INFO] [1446519025190] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519025835] Message Received : P 29 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519025835] message sent : A 29
+[RECEIVER] [INFO] [1446519025835] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519026190] message sent  : P 91 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519026190] Message Received : P 193 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519026190] message sent : A 193
+[RECEIVER] [INFO] [1446519026190] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519026190] Message Received : A 91
+[RECEIVER] [INFO] [1446519026190] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519027060] Message Received : P 179 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519027060] message sent : A 179
+[RECEIVER] [INFO] [1446519027060] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519027194] message sent  : P 92 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519027195] Message Received : A 92
+[RECEIVER] [INFO] [1446519027195] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519028197] message sent  : P 93 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519028198] Message Received : A 93
+[RECEIVER] [INFO] [1446519028198] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519029069] Message Received : P 114 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519029069] message sent : A 114
+[RECEIVER] [INFO] [1446519029069] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519029200] message sent  : P 94 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519029200] Message Received : P 196 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519029200] message sent : A 196
+[RECEIVER] [INFO] [1446519029200] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519029200] Message Received : A 94
+[RECEIVER] [INFO] [1446519029200] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519030074] Message Received : P 115 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519030074] message sent : A 115
+[RECEIVER] [INFO] [1446519030074] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519030206] message sent  : P 95 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519030206] Message Received : A 95
+[RECEIVER] [INFO] [1446519030206] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519030847] Message Received : P 34 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519030847] message sent : A 34
+[RECEIVER] [INFO] [1446519030847] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519031208] message sent  : P 96 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519031209] Message Received : A 96
+[RECEIVER] [INFO] [1446519031209] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519032084] Message Received : P 184 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519032084] message sent : A 184
+[RECEIVER] [INFO] [1446519032084] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519032208] message sent  : P 97 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519032209] Message Received : A 97
+[RECEIVER] [INFO] [1446519032209] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519033086] Message Received : P 185 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519033086] message sent : A 185
+[RECEIVER] [INFO] [1446519033086] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519033210] Message Received : P 200 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519033210] message sent : A 200
+[RECEIVER] [INFO] [1446519033210] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519033211] message sent  : P 98 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519033212] Message Received : A 98
+[RECEIVER] [INFO] [1446519033212] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519034216] message sent  : P 99 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519034217] Message Received : A 99
+[RECEIVER] [INFO] [1446519034217] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519035221] message sent  : P 100 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519035222] Message Received : A 100
+[RECEIVER] [INFO] [1446519035222] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519036094] Message Received : P 121 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519036094] message sent : A 121
+[RECEIVER] [INFO] [1446519036094] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519036226] message sent  : P 101 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519036226] Message Received : A 101
+[RECEIVER] [INFO] [1446519036226] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519036861] Message Received : P 40 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519036861] message sent : A 40
+[RECEIVER] [INFO] [1446519036861] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519037226] message sent  : P 102 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519037227] Message Received : A 102
+[RECEIVER] [INFO] [1446519037227] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519038100] Message Received : P 190 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519038100] message sent : A 190
+[RECEIVER] [INFO] [1446519038100] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519038225] Message Received : P 205 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519038225] message sent : A 205
+[RECEIVER] [INFO] [1446519038225] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519038231] message sent  : P 103 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519038232] Message Received : A 103
+[RECEIVER] [INFO] [1446519038232] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519039231] message sent  : P 104 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519039232] Message Received : A 104
+[RECEIVER] [INFO] [1446519039232] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519040105] Message Received : P 125 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519040105] message sent : A 125
+[RECEIVER] [INFO] [1446519040105] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519040234] message sent  : P 105 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519040234] Message Received : P 207 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519040234] message sent : A 207
+[RECEIVER] [INFO] [1446519040234] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519040234] Message Received : A 105
+[RECEIVER] [INFO] [1446519040235] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519040871] Message Received : P 44 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519040872] message sent : A 44
+[RECEIVER] [INFO] [1446519040872] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519041239] message sent  : P 106 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519041240] Message Received : A 106
+[RECEIVER] [INFO] [1446519041240] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519041877] Message Received : P 45 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519041877] message sent : A 45
+[RECEIVER] [INFO] [1446519041877] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519042109] Message Received : P 194 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519042109] message sent : A 194
+[RECEIVER] [INFO] [1446519042109] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519042109] Message Received : P 127 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519042109] message sent : A 127
+[RECEIVER] [INFO] [1446519042109] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519042241] message sent  : P 107 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519042242] Message Received : A 107
+[RECEIVER] [INFO] [1446519042242] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519043242] message sent  : P 108 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519043243] Message Received : A 108
+[RECEIVER] [INFO] [1446519043243] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519044245] message sent  : P 109 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519044246] Message Received : A 109
+[RECEIVER] [INFO] [1446519044246] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519045119] Message Received : P 197 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519045119] message sent : A 197
+[RECEIVER] [INFO] [1446519045120] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519045247] message sent  : P 110 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519045247] Message Received : A 110
+[RECEIVER] [INFO] [1446519045247] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519046122] Message Received : P 131 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519046122] message sent : A 131
+[RECEIVER] [INFO] [1446519046122] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519046252] message sent  : P 111 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519046252] Message Received : P 213 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519046252] message sent : A 213
+[RECEIVER] [INFO] [1446519046252] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519046252] Message Received : A 111
+[RECEIVER] [INFO] [1446519046252] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519047257] message sent  : P 112 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519047257] Message Received : A 112
+[RECEIVER] [INFO] [1446519047257] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519048259] message sent  : P 113 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519048260] Message Received : A 113
+[RECEIVER] [INFO] [1446519048260] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519048899] Message Received : P 52 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519048899] message sent : A 52
+[RECEIVER] [INFO] [1446519048899] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519049260] message sent  : P 114 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519049261] Message Received : A 114
+[RECEIVER] [INFO] [1446519049261] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519050263] message sent  : P 115 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519050263] Message Received : P 217 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519050263] message sent : A 217
+[RECEIVER] [INFO] [1446519050263] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519050263] Message Received : A 115
+[RECEIVER] [INFO] [1446519050263] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519050904] Message Received : P 54 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519050904] message sent : A 54
+[RECEIVER] [INFO] [1446519050904] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519051266] message sent  : P 116 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519051268] Message Received : A 116
+[RECEIVER] [INFO] [1446519051268] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519052145] Message Received : P 204 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519052145] message sent : A 204
+[RECEIVER] [INFO] [1446519052145] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519052145] Message Received : P 137 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519052145] message sent : A 137
+[RECEIVER] [INFO] [1446519052145] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519052269] message sent  : P 117 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519052270] Message Received : A 117
+[RECEIVER] [INFO] [1446519052270] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519053269] message sent  : P 118 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519053270] Message Received : A 118
+[RECEIVER] [INFO] [1446519053270] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519054153] Message Received : P 139 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519054153] message sent : A 139
+[RECEIVER] [INFO] [1446519054153] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519054154] Message Received : P 206 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519054154] message sent : A 206
+[RECEIVER] [INFO] [1446519054154] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519054270] message sent  : P 119 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519054270] Message Received : A 119
+[RECEIVER] [INFO] [1446519054271] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519055269] message sent  : P 120 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519055270] Message Received : A 120
+[RECEIVER] [INFO] [1446519055270] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519055271] Message Received : P 222 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519055271] message sent : A 222
+[RECEIVER] [INFO] [1446519055271] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519055919] Message Received : P 59 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519055919] message sent : A 59
+[RECEIVER] [INFO] [1446519055919] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519056271] message sent  : P 121 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519056271] Message Received : A 121
+[RECEIVER] [INFO] [1446519056271] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519057164] Message Received : P 209 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519057164] message sent : A 209
+[RECEIVER] [INFO] [1446519057164] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519057271] message sent  : P 122 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519057271] Message Received : A 122
+[RECEIVER] [INFO] [1446519057272] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519057272] Message Received : P 224 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519057273] message sent : A 224
+[RECEIVER] [INFO] [1446519057273] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519058272] message sent  : P 123 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519058273] Message Received : A 123
+[RECEIVER] [INFO] [1446519058274] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519058923] Message Received : P 62 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519058924] message sent : A 62
+[RECEIVER] [INFO] [1446519058924] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519059272] message sent  : P 124 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519059273] Message Received : A 124
+[RECEIVER] [INFO] [1446519059273] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519060173] Message Received : P 145 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519060173] message sent : A 145
+[RECEIVER] [INFO] [1446519060173] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519060277] message sent  : P 125 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519060277] Message Received : P 227 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519060277] message sent : A 227
+[RECEIVER] [INFO] [1446519060277] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519060278] Message Received : A 125
+[RECEIVER] [INFO] [1446519060278] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519061278] message sent  : P 126 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519061279] Message Received : A 126
+[RECEIVER] [INFO] [1446519061279] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519061937] Message Received : P 65 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519061937] message sent : A 65
+[RECEIVER] [INFO] [1446519061937] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519062173] Message Received : P 214 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519062173] message sent : A 214
+[RECEIVER] [INFO] [1446519062173] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519062282] message sent  : P 127 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519062283] Message Received : A 127
+[RECEIVER] [INFO] [1446519062283] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519063284] message sent  : P 128 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519063285] Message Received : A 128
+[RECEIVER] [INFO] [1446519063285] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519064288] message sent  : P 129 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519064289] Message Received : A 129
+[RECEIVER] [INFO] [1446519064289] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519065175] Message Received : P 150 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519065175] message sent : A 150
+[RECEIVER] [INFO] [1446519065175] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519065292] message sent  : P 130 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519065292] Message Received : P 232 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519065292] message sent : A 232
+[RECEIVER] [INFO] [1446519065292] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519065292] Message Received : A 130
+[RECEIVER] [INFO] [1446519065292] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519066295] message sent  : P 131 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519066296] Message Received : A 131
+[RECEIVER] [INFO] [1446519066296] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519066943] Message Received : P 70 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519066943] message sent : A 70
+[RECEIVER] [INFO] [1446519066943] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519067175] Message Received : P 219 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519067176] message sent : A 219
+[RECEIVER] [INFO] [1446519067176] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519067300] message sent  : P 132 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519067300] Message Received : A 132
+[RECEIVER] [INFO] [1446519067301] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519068305] message sent  : P 133 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519068305] Message Received : A 133
+[RECEIVER] [INFO] [1446519068306] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519069185] Message Received : P 154 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519069185] message sent : A 154
+[RECEIVER] [INFO] [1446519069185] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519069306] message sent  : P 134 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519069307] Message Received : A 134
+[RECEIVER] [INFO] [1446519069307] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519070189] Message Received : P 222 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519070189] message sent : A 222
+[RECEIVER] [INFO] [1446519070189] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519070309] message sent  : P 135 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519070310] Message Received : A 135
+[RECEIVER] [INFO] [1446519070310] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519071189] Message Received : P 156 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519071189] message sent : A 156
+[RECEIVER] [INFO] [1446519071189] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519071310] message sent  : P 136 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519071310] Message Received : A 136
+[RECEIVER] [INFO] [1446519071310] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519071311] Message Received : P 238 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519071311] message sent : A 238
+[RECEIVER] [INFO] [1446519071311] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519071959] Message Received : P 75 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519071959] message sent : A 75
+[RECEIVER] [INFO] [1446519071959] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519072311] message sent  : P 137 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519072312] Message Received : A 137
+[RECEIVER] [INFO] [1446519072312] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519073193] Message Received : P 225 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519073193] message sent : A 225
+[RECEIVER] [INFO] [1446519073193] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519073312] message sent  : P 138 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519073313] Message Received : P 240 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519073313] message sent : A 240
+[RECEIVER] [INFO] [1446519073313] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519073313] Message Received : A 138
+[RECEIVER] [INFO] [1446519073313] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519074198] Message Received : P 159 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519074198] message sent : A 159
+[RECEIVER] [INFO] [1446519074198] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519074314] message sent  : P 139 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519074314] Message Received : A 139
+[RECEIVER] [INFO] [1446519074314] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519075314] message sent  : P 140 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519075315] Message Received : A 140
+[RECEIVER] [INFO] [1446519075315] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519075964] Message Received : P 79 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519075964] message sent : A 79
+[RECEIVER] [INFO] [1446519075964] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519076319] message sent  : P 141 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519076319] Message Received : A 141
+[RECEIVER] [INFO] [1446519076320] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519077204] Message Received : P 229 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519077204] message sent : A 229
+[RECEIVER] [INFO] [1446519077204] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519077317] Message Received : P 244 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519077318] message sent : A 244
+[RECEIVER] [INFO] [1446519077318] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519077323] message sent  : P 142 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519077324] Message Received : A 142
+[RECEIVER] [INFO] [1446519077324] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519078328] message sent  : P 143 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519078329] Message Received : A 143
+[RECEIVER] [INFO] [1446519078329] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519079330] message sent  : P 144 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519079331] Message Received : A 144
+[RECEIVER] [INFO] [1446519079331] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519079970] Message Received : P 83 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519079970] message sent : A 83
+[RECEIVER] [INFO] [1446519079970] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519080331] message sent  : P 145 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519080331] Message Received : A 145
+[RECEIVER] [INFO] [1446519080331] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519081217] Message Received : P 166 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519081217] message sent : A 166
+[RECEIVER] [INFO] [1446519081217] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519081329] Message Received : P 248 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519081329] message sent : A 248
+[RECEIVER] [INFO] [1446519081329] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519081334] message sent  : P 146 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519081336] Message Received : A 146
+[RECEIVER] [INFO] [1446519081336] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519082220] Message Received : P 167 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519082220] message sent : A 167
+[RECEIVER] [INFO] [1446519082220] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519082339] message sent  : P 147 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519082339] Message Received : A 147
+[RECEIVER] [INFO] [1446519082339] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519082977] Message Received : P 86 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519082977] message sent : A 86
+[RECEIVER] [INFO] [1446519082977] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519083225] Message Received : P 235 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519083225] message sent : A 235
+[RECEIVER] [INFO] [1446519083225] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519083345] message sent  : P 148 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519083345] Message Received : A 148
+[RECEIVER] [INFO] [1446519083345] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519084349] message sent  : P 149 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519084350] Message Received : A 149
+[RECEIVER] [INFO] [1446519084350] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519085351] message sent  : P 150 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519085352] Message Received : A 150
+[RECEIVER] [INFO] [1446519085352] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519086236] Message Received : P 238 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519086236] message sent : A 238
+[RECEIVER] [INFO] [1446519086236] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519086351] message sent  : P 151 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519086352] Message Received : A 151
+[RECEIVER] [INFO] [1446519086352] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519086986] Message Received : P 90 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519086986] message sent : A 90
+[RECEIVER] [INFO] [1446519086986] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519087231] Message Received : P 172 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519087232] message sent : A 172
+[RECEIVER] [INFO] [1446519087232] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519087338] Message Received : P 254 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519087338] message sent : A 254
+[RECEIVER] [INFO] [1446519087338] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519087352] message sent  : P 152 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519087352] Message Received : A 152
+[RECEIVER] [INFO] [1446519087353] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519088353] message sent  : P 153 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519088353] Message Received : A 153
+[RECEIVER] [INFO] [1446519088353] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519089353] message sent  : P 154 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519089353] Message Received : A 154
+[RECEIVER] [INFO] [1446519089353] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519090350] Message Received : P 257 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519090350] message sent : A 257
+[RECEIVER] [INFO] [1446519090350] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519090358] message sent  : P 155 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519090359] Message Received : A 155
+[RECEIVER] [INFO] [1446519090359] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519091250] Message Received : P 243 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519091250] message sent : A 243
+[RECEIVER] [INFO] [1446519091250] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519091363] message sent  : P 156 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519091363] Message Received : A 156
+[RECEIVER] [INFO] [1446519091363] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519092358] Message Received : P 259 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519092358] message sent : A 259
+[RECEIVER] [INFO] [1446519092358] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519092364] message sent  : P 157 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519092364] Message Received : A 157
+[RECEIVER] [INFO] [1446519092364] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519093001] Message Received : P 96 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519093001] message sent : A 96
+[RECEIVER] [INFO] [1446519093001] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519093249] Message Received : P 178 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519093249] message sent : A 178
+[RECEIVER] [INFO] [1446519093249] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519093255] Message Received : P 245 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519093255] message sent : A 245
+[RECEIVER] [INFO] [1446519093255] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519093365] message sent  : P 158 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519093365] Message Received : A 158
+[RECEIVER] [INFO] [1446519093366] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519094369] message sent  : P 159 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519094370] Message Received : A 159
+[RECEIVER] [INFO] [1446519094370] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519095252] Message Received : P 180 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519095252] message sent : A 180
+[RECEIVER] [INFO] [1446519095252] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519095372] message sent  : P 160 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519095372] Message Received : A 160
+[RECEIVER] [INFO] [1446519095373] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519096005] Message Received : P 99 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519096005] message sent : A 99
+[RECEIVER] [INFO] [1446519096005] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519096372] message sent  : P 161 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519096372] Message Received : A 161
+[RECEIVER] [INFO] [1446519096372] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519097372] message sent  : P 162 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519097373] Message Received : A 162
+[RECEIVER] [INFO] [1446519097373] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519098259] Message Received : P 183 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519098260] message sent : A 183
+[RECEIVER] [INFO] [1446519098260] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519098373] message sent  : P 163 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519098373] Message Received : P 265 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519098373] message sent : A 265
+[RECEIVER] [INFO] [1446519098373] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519098373] Message Received : A 163
+[RECEIVER] [INFO] [1446519098373] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519099014] Message Received : P 102 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519099015] message sent : A 102
+[RECEIVER] [INFO] [1446519099015] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519099275] Message Received : P 251 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519099275] message sent : A 251
+[RECEIVER] [INFO] [1446519099275] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519099373] message sent  : P 164 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519099373] Message Received : A 164
+[RECEIVER] [INFO] [1446519099373] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519100379] message sent  : P 165 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519100379] Message Received : A 165
+[RECEIVER] [INFO] [1446519100379] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519100520] Message Received : Q 103 Ashus-MacBook-Pro.local_9020_1446518990731 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519100520] message sent : Q 103 Ashus-MacBook-Pro.local_9020_1446518990731 Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519100521] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446518842765]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519101385] message sent  : P 166 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519101386] Message Received : P 268 Ashus-MacBook-Pro.local_9000_0;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [MEM_REMOVE] [1446519101386] : failure received : Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519101386] message sent : A 268;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519101386] Waiting to receive next packet
+[Election]: Recieved Message C Ashus-MacBook-Pro.local_9005_1446518911716
+[SENDER] [INFO] [1446519101890] message sent  : Q 166 Ashus-MacBook-Pro.local_9010_1446518930144 Ashus-MacBook-Pro.local_9015_1446518842765 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[SENDER] [INFO] [1446519101890] message sent  : Q 166 Ashus-MacBook-Pro.local_9010_1446518930144 Ashus-MacBook-Pro.local_9015_1446518842765 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[SENDER] [MEM_REMOVE] [1446519102385] : failure detected : Ashus-MacBook-Pro.local_9015_1446518842765
+[DEBUG] INFO BUFFER : {F Ashus-MacBook-Pro.local_9015_1446518842765=173}
+[DEBUG] RECENTLY LEFT : {Ashus-MacBook-Pro.local_9015_1446518842765=175}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519102385] message sent  : P 167 Ashus-MacBook-Pro.local_9010_1446518930144;F Ashus-MacBook-Pro.local_9015_1446518842765 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519102385] Message Received : A 167;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519102386] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519103023] Message Received : P 106 Ashus-MacBook-Pro.local_9020_1446518990731;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519103023] message sent : A 106;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519103023] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519103387] Message Received : P 270 Ashus-MacBook-Pro.local_9000_0;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519103388] message sent : A 270;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519103388] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {F Ashus-MacBook-Pro.local_9015_1446518842765=173}
+[DEBUG] RECENTLY LEFT : {Ashus-MacBook-Pro.local_9015_1446518842765=175}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519103390] message sent  : P 168 Ashus-MacBook-Pro.local_9010_1446518930144;F Ashus-MacBook-Pro.local_9015_1446518842765 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519103390] Message Received : A 168;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519103390] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519104273] Message Received : P 189 Ashus-MacBook-Pro.local_9005_1446518911716;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519104273] message sent : A 189;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519104273] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {F Ashus-MacBook-Pro.local_9015_1446518842765=173}
+[DEBUG] RECENTLY LEFT : {Ashus-MacBook-Pro.local_9015_1446518842765=175}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519104392] message sent  : P 169 Ashus-MacBook-Pro.local_9010_1446518930144;F Ashus-MacBook-Pro.local_9015_1446518842765 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519104392] Message Received : A 169;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519104393] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {F Ashus-MacBook-Pro.local_9015_1446518842765=173}
+[DEBUG] RECENTLY LEFT : {Ashus-MacBook-Pro.local_9015_1446518842765=175}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519105395] message sent  : P 170 Ashus-MacBook-Pro.local_9010_1446518930144;F Ashus-MacBook-Pro.local_9015_1446518842765 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519105396] Message Received : A 170;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519105396] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519106027] Message Received : P 109 Ashus-MacBook-Pro.local_9020_1446518990731;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519106028] message sent : A 109;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519106028] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519106279] Message Received : P 191 Ashus-MacBook-Pro.local_9005_1446518911716;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519106279] message sent : A 191;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519106279] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {F Ashus-MacBook-Pro.local_9015_1446518842765=173}
+[DEBUG] RECENTLY LEFT : {Ashus-MacBook-Pro.local_9015_1446518842765=175}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519106399] message sent  : P 171 Ashus-MacBook-Pro.local_9010_1446518930144;F Ashus-MacBook-Pro.local_9015_1446518842765 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519106399] Message Received : A 171;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519106399] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {F Ashus-MacBook-Pro.local_9015_1446518842765=173}
+[DEBUG] RECENTLY LEFT : {Ashus-MacBook-Pro.local_9015_1446518842765=175}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519107400] message sent  : P 172 Ashus-MacBook-Pro.local_9010_1446518930144;F Ashus-MacBook-Pro.local_9015_1446518842765 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519107400] Message Received : P 274 Ashus-MacBook-Pro.local_9000_0;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519107401] message sent : A 274;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519107401] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519107401] Message Received : A 172;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519107401] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519108034] Message Received : P 111 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519108034] message sent : A 111;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519108034] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519108286] Message Received : P 193 Ashus-MacBook-Pro.local_9005_1446518911716;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519108286] message sent : A 193;F Ashus-MacBook-Pro.local_9015_1446518842765
+[RECEIVER] [INFO] [1446519108286] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {F Ashus-MacBook-Pro.local_9015_1446518842765=173}
+[DEBUG] RECENTLY LEFT : {Ashus-MacBook-Pro.local_9015_1446518842765=175}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519108405] message sent  : P 173 Ashus-MacBook-Pro.local_9010_1446518930144;F Ashus-MacBook-Pro.local_9015_1446518842765 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519108405] Message Received : A 173
+[RECEIVER] [INFO] [1446519108406] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {F Ashus-MacBook-Pro.local_9015_1446518842765=173}
+[DEBUG] RECENTLY LEFT : {Ashus-MacBook-Pro.local_9015_1446518842765=175}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519109408] message sent  : P 174 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519109409] Message Received : A 174
+[RECEIVER] [INFO] [1446519109409] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {Ashus-MacBook-Pro.local_9015_1446518842765=175}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519110412] message sent  : P 175 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519110412] Message Received : A 175
+[RECEIVER] [INFO] [1446519110412] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519111296] Message Received : P 196 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519111296] message sent : A 196
+[RECEIVER] [INFO] [1446519111296] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {Ashus-MacBook-Pro.local_9015_1446518842765=175}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519111413] message sent  : P 176 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519111413] Message Received : P 278 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519111413] message sent : A 278
+[RECEIVER] [INFO] [1446519111413] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519111414] Message Received : A 176
+[RECEIVER] [INFO] [1446519111414] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519112413] message sent  : P 177 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519112413] Message Received : A 177
+[RECEIVER] [INFO] [1446519112413] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519113051] Message Received : P 116 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519113051] message sent : A 116
+[RECEIVER] [INFO] [1446519113051] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519113417] message sent  : P 178 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519113418] Message Received : A 178
+[RECEIVER] [INFO] [1446519113418] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519113419] Message Received : P 280 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519113419] message sent : A 280
+[RECEIVER] [INFO] [1446519113419] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519114056] Message Received : P 117 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519114056] message sent : A 117
+[RECEIVER] [INFO] [1446519114056] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519114423] message sent  : P 179 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519114423] Message Received : A 179
+[RECEIVER] [INFO] [1446519114423] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519115425] message sent  : P 180 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519115425] Message Received : A 180
+[RECEIVER] [INFO] [1446519115425] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519116311] Message Received : P 201 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519116311] message sent : A 201
+[RECEIVER] [INFO] [1446519116311] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519116426] message sent  : P 181 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519116427] Message Received : A 181
+[RECEIVER] [INFO] [1446519116427] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519117428] message sent  : P 182 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519117428] Message Received : P 284 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519117428] message sent : A 284
+[RECEIVER] [INFO] [1446519117428] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519117428] Message Received : A 182
+[RECEIVER] [INFO] [1446519117428] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519118316] Message Received : P 203 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519118316] message sent : A 203
+[RECEIVER] [INFO] [1446519118316] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519118432] message sent  : P 183 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519118433] Message Received : A 183
+[RECEIVER] [INFO] [1446519118433] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519119072] Message Received : P 122 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519119072] message sent : A 122
+[RECEIVER] [INFO] [1446519119072] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519119436] message sent  : P 184 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519119436] Message Received : A 184
+[RECEIVER] [INFO] [1446519119437] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519120440] message sent  : P 185 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519120440] Message Received : P 287 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519120440] message sent : A 287
+[RECEIVER] [INFO] [1446519120440] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519120440] Message Received : A 185
+[RECEIVER] [INFO] [1446519120440] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519121441] message sent  : P 186 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519121441] Message Received : A 186
+[RECEIVER] [INFO] [1446519121441] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519122084] Message Received : P 125 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519122084] message sent : A 125
+[RECEIVER] [INFO] [1446519122084] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519122326] Message Received : P 207 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519122327] message sent : A 207
+[RECEIVER] [INFO] [1446519122327] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519122441] message sent  : P 187 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519122441] Message Received : P 289 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519122441] message sent : A 289
+[RECEIVER] [INFO] [1446519122442] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519122442] Message Received : A 187
+[RECEIVER] [INFO] [1446519122442] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519123444] message sent  : P 188 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519123444] Message Received : A 188
+[RECEIVER] [INFO] [1446519123444] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519124334] Message Received : P 209 Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519124334] message sent : A 209
+[RECEIVER] [INFO] [1446519124334] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519124448] message sent  : P 189 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519124448] Message Received : A 189
+[RECEIVER] [INFO] [1446519124449] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519125096] Message Received : P 128 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519125096] message sent : A 128
+[RECEIVER] [INFO] [1446519125096] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519125449] message sent  : P 190 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519125449] Message Received : P 292 Ashus-MacBook-Pro.local_9000_0;J Ashus-MacBook-Pro.local_9015_1446519123706
+[RECEIVER] [MEM_ADD] [1446519125449] : Ashus-MacBook-Pro.local_9015_1446519123706
+[RECEIVER] [INFO] [1446519125449] message sent : A 292;J Ashus-MacBook-Pro.local_9015_1446519123706
+[RECEIVER] [INFO] [1446519125449] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519125449] Message Received : A 190;J Ashus-MacBook-Pro.local_9015_1446519123706
+[RECEIVER] [INFO] [1446519125449] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519126099] Message Received : P 129 Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519126099] message sent : A 129;J Ashus-MacBook-Pro.local_9015_1446519123706
+[RECEIVER] [INFO] [1446519126099] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {J Ashus-MacBook-Pro.local_9015_1446519123706=195}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446519123706]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519126450] message sent  : P 191 Ashus-MacBook-Pro.local_9010_1446518930144;J Ashus-MacBook-Pro.local_9015_1446519123706 : destination : Ashus-MacBook-Pro.local_9015_1446519123706
+[RECEIVER] [INFO] [1446519126450] Message Received : A 191
+[RECEIVER] [INFO] [1446519126450] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {J Ashus-MacBook-Pro.local_9015_1446519123706=195}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446519123706]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519127453] message sent  : P 192 Ashus-MacBook-Pro.local_9010_1446518930144;J Ashus-MacBook-Pro.local_9015_1446519123706 : destination : Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519127453] Message Received : A 192;J Ashus-MacBook-Pro.local_9015_1446519123706
+[RECEIVER] [INFO] [1446519127453] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519128341] Message Received : P 213 Ashus-MacBook-Pro.local_9005_1446518911716;J Ashus-MacBook-Pro.local_9015_1446519123706
+[RECEIVER] [INFO] [1446519128341] message sent : A 213;J Ashus-MacBook-Pro.local_9015_1446519123706
+[RECEIVER] [INFO] [1446519128341] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {J Ashus-MacBook-Pro.local_9015_1446519123706=195}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446519123706]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519128454] message sent  : P 193 Ashus-MacBook-Pro.local_9010_1446518930144;J Ashus-MacBook-Pro.local_9015_1446519123706 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519128455] Message Received : A 193;J Ashus-MacBook-Pro.local_9015_1446519123706
+[RECEIVER] [INFO] [1446519128455] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519129110] Message Received : P 132 Ashus-MacBook-Pro.local_9020_1446518990731;J Ashus-MacBook-Pro.local_9015_1446519123706
+[RECEIVER] [INFO] [1446519129110] message sent : A 132;J Ashus-MacBook-Pro.local_9015_1446519123706
+[RECEIVER] [INFO] [1446519129110] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {J Ashus-MacBook-Pro.local_9015_1446519123706=195}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446519123706]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519129457] message sent  : P 194 Ashus-MacBook-Pro.local_9010_1446518930144;J Ashus-MacBook-Pro.local_9015_1446519123706 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[RECEIVER] [INFO] [1446519129458] Message Received : A 194;J Ashus-MacBook-Pro.local_9015_1446519123706
+[RECEIVER] [INFO] [1446519129458] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {J Ashus-MacBook-Pro.local_9015_1446519123706=195}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446519123706]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519130460] message sent  : P 195 Ashus-MacBook-Pro.local_9010_1446518930144;J Ashus-MacBook-Pro.local_9015_1446519123706 : destination : Ashus-MacBook-Pro.local_9015_1446519123706
+[RECEIVER] [INFO] [1446519130461] Message Received : A 195
+[RECEIVER] [INFO] [1446519130461] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519130754] Message Received : P 1 Ashus-MacBook-Pro.local_9015_1446519123706
+[RECEIVER] [INFO] [1446519130754] message sent : A 1;J Ashus-MacBook-Pro.local_9015_1446519123706
+[RECEIVER] [INFO] [1446519130754] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {J Ashus-MacBook-Pro.local_9015_1446519123706=195}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446519123706]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519131460] message sent  : P 196 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9020_1446518990731
+[RECEIVER] [INFO] [1446519131460] Message Received : A 196;J Ashus-MacBook-Pro.local_9015_1446519123706
+[RECEIVER] [INFO] [1446519131460] Waiting to receive next packet
+[RECEIVER] [INFO] [1446519131461] Message Received : P 298 Ashus-MacBook-Pro.local_9000_0
+[RECEIVER] [INFO] [1446519131461] message sent : A 298
+[RECEIVER] [INFO] [1446519131461] Waiting to receive next packet
+[DEBUG] INFO BUFFER : {}
+[DEBUG] RECENTLY LEFT : {}
+[DEBUG] MEMBERSHIP LIST : [Ashus-MacBook-Pro.local_9005_1446518911716, Ashus-MacBook-Pro.local_9020_1446518990731, Ashus-MacBook-Pro.local_9000_0, Ashus-MacBook-Pro.local_9015_1446519123706]
+[DEBUG] INTRO FAILED : false
+[SENDER] [INFO] [1446519132465] message sent  : P 197 Ashus-MacBook-Pro.local_9010_1446518930144 : destination : Ashus-MacBook-Pro.local_9005_1446518911716
+[SENDER] [INFO] [1446519132968] message sent  : Q 197 Ashus-MacBook-Pro.local_9010_1446518930144 Ashus-MacBook-Pro.local_9005_1446518911716 : destination : Ashus-MacBook-Pro.local_9015_1446519123706
+[SENDER] [INFO] [1446519132969] message sent  : Q 197 Ashus-MacBook-Pro.local_9010_1446518930144 Ashus-MacBook-Pro.local_9005_1446518911716 : destination : Ashus-MacBook-Pro.local_9020_1446518990731

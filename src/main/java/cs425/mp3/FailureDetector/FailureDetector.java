@@ -4,7 +4,9 @@ import cs425.mp3.Pid;
 
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -230,6 +232,23 @@ public class FailureDetector {
 
         double ret=3.0*Math.log(numMembers)/Math.log(2.0)+1.0;
         return ret;
+    }
+    
+    public Pid getSelfID(){
+    	return this.self_id;
+    }
+    public Boolean isAlive(String id){
+    	if(id.equals(self_id.pidStr)){
+    		return true;
+    	}
+    	else{
+    		return membershipSet.contains(id);
+    	}
+    }
+    public List<String> getMemlistSkipIntroducer(){
+    	List<String> memlist = new ArrayList<String>(membershipSet);
+    	memlist.remove(introducer_id.pidStr);
+    	return memlist;
     }
 }
 

@@ -33,4 +33,8 @@ public class Pid {
         String [] tokens = pidString.split("_");
         return new Pid(tokens[0],Integer.parseInt(tokens[1]),Long.parseLong(tokens[2]));
     }
+    @Override
+    public String toString(){
+    	return pidStr;
+    }
 }
