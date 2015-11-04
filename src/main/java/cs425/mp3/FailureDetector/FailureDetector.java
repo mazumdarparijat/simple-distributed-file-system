@@ -237,17 +237,29 @@ public class FailureDetector {
     public Pid getSelfID(){
     	return this.self_id;
     }
+    public Pid getIntroID(){
+    	return this.introducer_id;
+    }
     public Boolean isAlive(String id){
     	if(id.equals(self_id.pidStr)){
     		return true;
     	}
-    	else{
+    	else if(id.equals(introducer_id.toString())){
+    		return (!introducer_failed.get());
+    	}
+    	else {
     		return membershipSet.contains(id);
     	}
     }
     public List<String> getMemlistSkipIntroducer(){
     	List<String> memlist = new ArrayList<String>(membershipSet);
     	memlist.remove(introducer_id.pidStr);
+    	return memlist;
+    }
+    public List<String> getMemlistSkipIntroducerWithSelf(){
+    	List<String> memlist = new ArrayList<String>(membershipSet);
+    	memlist.remove(introducer_id.pidStr);
+    	memlist.add(self_id.toString());
     	return memlist;
     }
 }

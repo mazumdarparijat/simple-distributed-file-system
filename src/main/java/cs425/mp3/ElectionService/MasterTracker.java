@@ -49,7 +49,7 @@ public class MasterTracker {
 			if(master!=null && FD.isAlive(master)){
 				masterID=master;
 			}
-			String msgreply = MessageBuilder.buildReplyMessage(masterID).toString();
+			String msgreply = MessageBuilder.buildMasterReplyMessage(masterID).toString();
 			sendMessage(clientSocket,msgreply);
 		}
 		if(m.type==MessageType.COORDINATOR){

@@ -17,14 +17,14 @@ import cs425.mp3.ElectionService.Message.MessageBuilder;
  *
  */
 public class ElectionService {
-	private int TIMEOUT=500;
+	private int SERVER_TIMEOUT=500;
 	private final FailureDetector FD;
 	private String master=null;
 	private ServerSocket welcomeSocket;
 	public ElectionService(int port) throws IOException{
 		FD=sdfsserverMain.FD;
 		welcomeSocket=new ServerSocket(port);
-		welcomeSocket.setSoTimeout(TIMEOUT);
+		welcomeSocket.setSoTimeout(SERVER_TIMEOUT);
 	}
 	private String sendMessage(Socket clientSocket, String msg) {
 		String response=null;
@@ -58,7 +58,7 @@ public class ElectionService {
 	}
 	private void handleMessage(String msg, Socket clientSocket) throws IOException{
 		Message m=Message.extractMessage(msg);
-		if(m.type==MessageType.REPLY){
+		if(m.type==MessageType.MASTER_REPLY){
 			String new_master=m.messageParams[0];
 			if(!new_master.equals("NOT_SET")){
 				master=new_master;
@@ -151,5 +151,8 @@ public class ElectionService {
 	}
 	public String getMaster(){
 		return master;
+	}
+	public Pid getMasterPid(){
+		return Pid.getPid(master);
 	}
 }
