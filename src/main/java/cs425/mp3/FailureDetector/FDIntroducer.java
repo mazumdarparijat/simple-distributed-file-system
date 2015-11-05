@@ -36,20 +36,18 @@ public class FDIntroducer extends FailureDetector {
      * @see FailureDetector#startFD()
      */
     @Override
-    public boolean startFD() {
+    public void startFD() {
         System.out.println("node started");
         NewJoinThread joiner=new NewJoinThread(this.self_id.port);
         joiner.setDaemon(true);
         joiner.start();
-        boolean rejoin=this.runFD();
+        this.runFD();
         joiner.setTerminate();
         try {
             joiner.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        return rejoin;
     }
 
     /**

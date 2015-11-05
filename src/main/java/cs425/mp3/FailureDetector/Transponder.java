@@ -27,7 +27,6 @@ public class Transponder extends Thread{
     private final AtomicBoolean introFailed;
     private AtomicInteger time;
     private AtomicBoolean ackReceived;
-    private AtomicBoolean rejoinSignal;
     private volatile boolean leave=false;
 
     /**Constructor
@@ -43,7 +42,7 @@ public class Transponder extends Thread{
      * @param time
      */
     public Transponder(DatagramSocket socket, String idStr, String introID, AtomicBoolean introducer_failed, Set<String> membershipSet,
-                       AtomicBoolean ackReceived, AtomicBoolean rejoinSignal, ConcurrentHashMap<Info, Integer> infoMap,
+                       AtomicBoolean ackReceived,ConcurrentHashMap<Info, Integer> infoMap,
                        ConcurrentHashMap<String, Integer> recentlyLeft, AtomicInteger time) {
         this.socket=socket;
         this.idString=idStr;
@@ -53,7 +52,6 @@ public class Transponder extends Thread{
         this.recentlyLeft=recentlyLeft;
         this.time=time;
         this.ackReceived=ackReceived;
-        this.rejoinSignal=rejoinSignal;
         this.introFailed=introducer_failed;
     }
 
@@ -208,7 +206,7 @@ public class Transponder extends Thread{
                 }
             }
         } else if (m.type==MessageType.MISSING_NOTICE) {
-            this.rejoinSignal.set(true);
+            terminate();
         } else {
                 throw new IllegalArgumentException("Message type not recognized");
         }

@@ -8,6 +8,6 @@ public class FailureDetectorThread extends Thread{
 	}
 	@Override
 	public void run(){
-		boolean restart=FD.startFD();
+		FD.startFD();
 	}
 }

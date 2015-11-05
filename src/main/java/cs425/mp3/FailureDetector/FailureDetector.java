@@ -26,7 +26,6 @@ public class FailureDetector {
 
     protected AtomicInteger time=new AtomicInteger(0);
     private AtomicBoolean ackReceived=new AtomicBoolean(false);
-    private AtomicBoolean rejoinSignal =new AtomicBoolean(false);
 
 	protected Pid introducer_id;
     private final AtomicBoolean introducer_failed;
@@ -34,7 +33,9 @@ public class FailureDetector {
     protected ConcurrentHashMap<String,Integer> recentlyLeft;
     protected Set<String> membershipSet;
     protected Pid self_id;
-
+    private PingSender sender;
+    private Transponder transponder;
+    
     /**
      * Initializes membership list and other data structures
      */
@@ -69,7 +70,7 @@ public class FailureDetector {
     /** Starts FD Module
      * @return true if needs to rejoin
      */
-    public boolean startFD() {
+    public void startFD() {
         // get membership list from introducer over TCP
         Socket tcpConnection=null;
 
@@ -119,13 +120,13 @@ public class FailureDetector {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return this.runFD();
+        this.runFD();
     }
 
 	/** Runs FD module
 	 * @return true if need to rejoin
 	 */
-	protected boolean runFD() {
+	protected void runFD() {
         DatagramSocket socket=null;
 		try {
 			socket = new DatagramSocket(self_id.port);
@@ -135,9 +136,10 @@ public class FailureDetector {
 
         System.out.println("[MAIN] [INFO] [" + System.currentTimeMillis() + "] : udp socket initiated");
 		Transponder receiverThread = new Transponder(socket,self_id.pidStr,introducer_id.pidStr,introducer_failed,
-                membershipSet,ackReceived,rejoinSignal,infoBuffer,recentlyLeft,time);
+                membershipSet,ackReceived,infoBuffer,recentlyLeft,time);
 		receiverThread.setDaemon(true);
 		receiverThread.start();
+		transponder = receiverThread;
         System.out.println("[MAIN] [INFO] [" + System.currentTimeMillis() + "] : receiver thread started");
 
         // wait for log N cycles before ping sending
@@ -151,77 +153,20 @@ public class FailureDetector {
                 self_id.pidStr,introducer_id.pidStr,introducer_failed,time,PING_TIME_OUT,PROTOCOL_TIME);
 		senderThread.setDaemon(true);
 		senderThread.start();
+		sender=senderThread;
         System.out.println("[MAIN] [INFO] [" + System.currentTimeMillis() + "] : sender thread added");
-		System.out.println("Press any key followed by enter to leave");
-		System.err.println("Ready to take arguments. Press m to get membership list, i to get id and l to leave");
-        boolean rejoin;
-        while (true) {
-            try {
-                while ((rejoin = System.in.available() <= 0) && !rejoinSignal.get()) {
-                    Thread.sleep(100);
-                }
-                if (!rejoin) {
-                    BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-                    String line=br.readLine();
-                    if (processUserCommand(line))
-                        break;
-                } else {
-                	System.err.println("The node is leaving to rejoin. Wait for it to come back with a new ID!");
-                    break;
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        senderThread.terminate();
         try {
             senderThread.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        receiverThread.terminate();
         try {
             receiverThread.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         socket.close();
-        return rejoin;
     }
-
-    /** Processes user options
-     * @param line user input
-     * @return true when leave requested
-     */
-    private boolean processUserCommand(String line) {
-        if (line.equals("m")) {
-            System.err.println("MEMBERSHIP LIST :");
-            for (String pid : membershipSet) {
-                if (pid.equals(introducer_id.pidStr)) {
-                    if (!introducer_failed.get())
-                        System.err.println(pid);
-                } else {
-                    System.err.println(pid);
-                }
-            }
-            return false;
-        } else if (line.equals("i")) {
-            System.err.println("ID : "+ self_id.pidStr);
-            return false;
-        } else if (line.equals("l")) {
-            System.err.println("leave requested");
-            return true;
-        } else {
-            System.err.println("argument not recognised. Press m to get membership list, i to get id and l to leave");
-            return false;
-        }
-    }
-
     /** Calculates dissemination time
      * @param numMembers
      * @return dissemination time
@@ -261,6 +206,10 @@ public class FailureDetector {
     	memlist.remove(introducer_id.pidStr);
     	memlist.add(self_id.toString());
     	return memlist;
+    }
+    public void leaveInitiate(){
+    	sender.terminate();
+    	transponder.terminate();
     }
 }
 

@@ -70,23 +70,19 @@ public class sdfsproxyMain {
 	public static void main(String [] args) throws IOException, InterruptedException {
 		FormatCommandLineInputs(args);
 		setupServices();
-		//Start Faliure Detector
+		//Start Failure Detector
 		FailureDetectorThread FDThread = new FailureDetectorThread(FD);
 		FDThread.setDaemon(true);
 		FDThread.start();
-		//Start Faliure Detector
+		//Start Failure Detector
 		MasterTrackerThread MTThread = new MasterTrackerThread(MT);
 		MTThread.setDaemon(true);
 		MTThread.start();
+		//Start User input Processor
+		InputProcessorIntroThread InputThread = new InputProcessorIntroThread();
+		InputThread.setDaemon(true);
+		InputThread.start();
 		
-		while(true){
-			if(MT.getMaster()!=null){
-				System.err.println("Master "+MT.getMaster());
-			}
-			else{
-				System.err.println("Master Null");
-			}
-			Thread.sleep(1000);
-		}
+		FDThread.join();
 	}
 }

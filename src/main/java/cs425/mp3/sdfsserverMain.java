@@ -98,16 +98,11 @@ public class sdfsserverMain {
 		//Start FileServer
 		FS.setDaemon(true);
 		FS.start();
-		
+		//Start User input Processor
+		InputProcessorThread InputThread = new InputProcessorThread();
+		InputThread.setDaemon(true);
+		InputThread.start();
 		//Wait for Failure Detector
-		while(true){
-			if(ES.getMaster()!=null){
-				System.err.println("Master "+ES.getMaster());
-			}
-			else{
-				System.err.println("Master Null");
-			}
-			Thread.sleep(1000);
-		}
+		FDThread.join();
 	}
 }
