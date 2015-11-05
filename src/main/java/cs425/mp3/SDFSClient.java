@@ -12,190 +12,263 @@ import java.util.Scanner;
  * Created by parijatmazumdar on 02/11/15.
  */
 public class SDFSClient {
-    private static final String introIP= "Parijats-MacBook-Pro.local";
-    private static final int introPort=9101;
+    private static String introIP;
+    private static int introPort;
+    private static final int ElectionPortDelta=1;
+    private static final int FSPortDelta=2;
+    private static final int MasterPortDelta=3;
 
     public static void main(String [] args) {
-        if (args[0].equals("put")) {
-            fileOps(args[1], args[2], 'p');
-        } else if (args[0].equals("get")) {
-            fileOps(args[1], args[2], 'g');
-        } else if (args[0].equals("del")) {
-            deleteFile(args[1]);
-        } else if (args[0].equals("rep")) {
-            replicateFile(args[1],args[2],Integer.parseInt(args[3]));
+        assert args.length==2 : "usage : String argument introducerIP and int argument introducer port reqd!";
+        introIP=args[0];
+        introPort=Integer.parseInt(args[1]);
+        System.out.println("Introducer IP : "+introIP+". Introducer port : "+introPort);
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        boolean exit=false;
+        while(!exit) {
+            try {
+                String [] input=br.readLine().split(" ");
+                if (input[0].equals("exit"))
+                    exit=true;
+                else if (input[0].equals("put")) {
+                    fileOps(input[1],flattenFilename(input[2]),'p');
+                } else if (input[0].equals("get")) {
+                    fileOps(flattenFilename(input[1]),input[2],'g');
+                } else if (input[0].equals("del")) {
+                    fileOps(flattenFilename(input[1]),"",'d');
+                } else {
+                    System.out.println("argument not recognized. Try again");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("arguments not provided correctly!");
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private static String flattenFilename(String fname) {
+        return fname.replaceAll("/","$");
+    }
+
+    private static Pid getMaster() {
+        while (true) {
+            try {
+                Socket sock = new Socket(introIP, introPort + ElectionPortDelta);
+                Scanner in = new Scanner(new InputStreamReader(sock.getInputStream()));
+                in.useDelimiter("\n");
+                PrintWriter out = new PrintWriter(new OutputStreamWriter(sock.getOutputStream()));
+                out.println(cs425.mp3.ElectionService.Message
+                        .MessageBuilder
+                        .buildMasterMessage(InetAddress.getLocalHost().getHostName())
+                        .toString());
+                out.flush();
+                cs425.mp3.ElectionService.Message reply = cs425.mp3.ElectionService
+                        .Message
+                        .extractMessage(in.next());
+                if (!reply.messageParams[0].equals("NOT_SET"))
+                    return Pid.getPid(reply.messageParams[0]);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            System.out.println("Master not set! I will try again.");
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+/*
+private static void replicateFile(String filename, String ip, int port) {
+Scanner soIn=null;
+PrintWriter soOut=null;
+Socket sock=null;
+try {
+sock=new Socket(introIP,introPort);
+sock.setSoTimeout(2000);
+soIn=new Scanner(new InputStreamReader(sock.getInputStream()));
+soIn.useDelimiter("\n");
+soOut=new PrintWriter(new OutputStreamWriter(sock.getOutputStream()),true);
+} catch (IOException e) {
+e.printStackTrace();
+}
+
+soOut.println(Message.createReplicateMessage(filename, ip, port));
+soOut.flush();
+
+try {
+Message reply=Message.retrieveMessage(soIn.next());
+if (reply.type.equals(MessageType.YES)) {
+System.out.println("replication done");
+} else if (reply.type.equals(MessageType.NO)) {
+System.out.println("Nay received");
+} else {
+System.out.println("idk");
+}
+} catch (IOException e) {
+e.printStackTrace();
+}
+
+try {
+sock.close();
+} catch (IOException e) {
+e.printStackTrace();
+}
+
+}
+*/
+
+    private static void deleteOperation(Scanner in, PrintWriter out, String fname) {
+        out.println(cs425.mp3.ElectionService.Message
+                .MessageBuilder
+                .buildDeleteMessage(fname));
+        out.flush();
+        if (in.hasNext()) {
+            cs425.mp3.ElectionService.Message reply= cs425.mp3.ElectionService
+                    .Message
+                    .extractMessage(in.next());
+            if (reply.messageParams[1].equals("NOT_OK"))
+                System.out.println("file not found in sdfs");
+            else
+                System.out.println("file deleted");
         } else {
-            System.out.println("Not implemented");
-        }
-    }
-
-    private static void replicateFile(String filename, String ip, int port) {
-        Scanner soIn=null;
-        PrintWriter soOut=null;
-        Socket sock=null;
-        try {
-            sock=new Socket(introIP,introPort);
-            sock.setSoTimeout(2000);
-            soIn=new Scanner(new InputStreamReader(sock.getInputStream()));
-            soIn.useDelimiter("\n");
-            soOut=new PrintWriter(new OutputStreamWriter(sock.getOutputStream()),true);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        soOut.println(Message.createReplicateMessage(filename,ip,port));
-        soOut.flush();
-
-        try {
-            Message reply=Message.retrieveMessage(soIn.next());
-            if (reply.type.equals(MessageType.YES)) {
-                System.out.println("replication done");
-            } else if (reply.type.equals(MessageType.NO)) {
-                System.out.println("Nay received");
-            } else {
-                System.out.println("idk");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            sock.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    private static void deleteFile(String fname) {
-        Scanner soIn=null;
-        PrintWriter soOut=null;
-        Socket sock=null;
-        try {
-            sock=new Socket(introIP,introPort);
-            sock.setSoTimeout(2000);
-            soIn=new Scanner(new InputStreamReader(sock.getInputStream()));
-            soIn.useDelimiter("\n");
-            soOut=new PrintWriter(new OutputStreamWriter(sock.getOutputStream()),true);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        soOut.println(Message.createDelMessage(fname));
-        soOut.flush();
-
-        try {
-            Message reply=Message.retrieveMessage(soIn.next());
-            if (reply.type.equals(MessageType.YES)) {
-                System.out.println("deleted");
-            } else if (reply.type.equals(MessageType.NO)) {
-                System.out.println("Nay received");
-            } else {
-                System.out.println("idk");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            sock.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("delete failed. master is down!");
         }
     }
 
     private static void fileOps(String srcfname, String destfname,char op) {
-        assert op=='p' || op=='g' : "op can only be either p or g.";
-        Scanner soIn=null;
-        PrintWriter soOut=null;
-        Socket sock=null;
+        assert op=='p' || op=='g' || op=='d' : "op can only be either p or g.";
+        Pid master=getMaster();
         try {
-            sock=new Socket(introIP,introPort);
+            Socket sock=new Socket(master.hostname,master.port+MasterPortDelta);
             sock.setSoTimeout(2000);
-            soIn=new Scanner(new InputStreamReader(sock.getInputStream()));
+            Scanner soIn=new Scanner(new InputStreamReader(sock.getInputStream()));
             soIn.useDelimiter("\n");
-            soOut=new PrintWriter(new OutputStreamWriter(sock.getOutputStream()),true);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            PrintWriter soOut=new PrintWriter(new OutputStreamWriter(sock.getOutputStream()),true);
 
-        if (op=='p')
-            soOut.println(Message.createPutMessage(destfname));
-        else if (op=='g')
-            soOut.println(Message.createGetMessage(srcfname));
-
-        soOut.flush();
-
-        try {
-            Message reply=Message.retrieveMessage(soIn.next());
-            if (reply.type.equals(MessageType.YES)) {
-                if (op=='p') sendFile(soOut, srcfname);
-                else if (op=='g') receiveFile(soIn,destfname);
-            } else if (reply.type.equals(MessageType.NO)) {
-                System.out.println("Nay received");
-            } else {
-                System.out.println("idk");
+            if (op=='p') {
+                putOperation(soIn, soOut,srcfname,destfname);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            else if (op=='g') {
+                getOperation(soIn, soOut, srcfname, destfname);
+            } else if (op=='d') {
+                deleteOperation(soIn,soOut,srcfname);
+            }
 
-        try {
             sock.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private static void receiveFile(Scanner soIn, String destfname) {
-        BufferedWriter bw=null;
-        try {
-            bw=new BufferedWriter(new OutputStreamWriter(new FileOutputStream(destfname)));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        boolean endReceived=false;
-        while (soIn.hasNext()) {
-            String text=soIn.next();
-            if (text.equals(Message.EOF)) {
-                endReceived=true;
-                break;
-            }
-
-            try {
-                bw.write(text);
-                bw.newLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        try {
-            bw.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        if (endReceived) {
-            System.out.println("end received. new file in local");
+    private static void getOperation(Scanner soIn, PrintWriter soOut, String sdfsfname, String destfname) {
+        soOut.println(cs425.mp3.ElectionService.Message
+                .MessageBuilder
+                .buildGetMessage(sdfsfname)
+                .toString());
+        soOut.flush();
+        cs425.mp3.ElectionService.Message reply= cs425.mp3.ElectionService.Message
+                .extractMessage(soIn.next());
+        if (reply.messageParams[0].equals("NOT_OK")) {
+            System.out.println("Get operation cannot be completed. File does not exist in sdfs");
         } else {
-            System.out.println("end not received. deleting file");
-            new File(destfname).delete();
+            boolean got=false;
+            for (int i=1;i<reply.messageParams.length && !got;i++) {
+                got=receiveFile(Pid.getPid(reply.messageParams[i]), sdfsfname, destfname);
+            }
+
+            if (!got)
+                System.out.println("Get operation cannot be completed. " +
+                        "All file servers rejected replying the file");
         }
     }
 
-    private static void sendFile(PrintWriter soOut, String srcfname) {
+    private static boolean receiveFile(Pid pid, String sdfsfname, String destfname) {
         try {
-            Scanner in=new Scanner(new InputStreamReader(new FileInputStream(srcfname)));
+            Socket sock = new Socket(pid.hostname, pid.port+FSPortDelta);
+            Scanner in = new Scanner(new InputStreamReader(sock.getInputStream()));
             in.useDelimiter("\n");
-            while (in.hasNext()) {
-                soOut.println(in.next());
+            PrintWriter out = new PrintWriter(new OutputStreamWriter(sock.getOutputStream()));
+            out.println(Message.createGetMessage(sdfsfname));
+            out.flush();
+            Message reply = Message.retrieveMessage(in.next());
+            if (reply.type.equals(MessageType.NO))
+                return false;
+            FileOutputStream fs=new FileOutputStream(destfname);
+            byte[] buffer=new byte[1024];
+            DataInputStream din=new DataInputStream(sock.getInputStream());
+            int readlen;
+            while ((readlen=din.read(buffer))!=-1) {
+                fs.write(buffer,0,readlen);
             }
+
+            fs.close();
+            sock.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            return false;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
         }
 
-        soOut.println(Message.EOF);
+        return true;
+    }
+
+    private static void putOperation(Scanner soIn, PrintWriter soOut, String srcfname, String sdfsfname) {
+        soOut.println(cs425.mp3.ElectionService.Message
+                .MessageBuilder
+                .buildPutMessage(sdfsfname)
+                .toString());
+        soOut.flush();
+        cs425.mp3.ElectionService.Message reply= cs425.mp3.ElectionService.Message
+                .extractMessage(soIn.next());
+        if (reply.messageParams[0].equals("NOT_OK")) {
+            System.out.println("Put operation cannot be completed. File already exists in sdfs");
+        } else {
+            boolean written=false;
+            for (int i=1;i<reply.messageParams.length;i++) {
+                written|=sendFile(Pid.getPid(reply.messageParams[i]),srcfname,sdfsfname);
+            }
+
+            if (!written)
+                System.out.println("Put operation cannot be completed. " +
+                        "All file servers rejected taking the file");
+        }
+    }
+
+    private static boolean sendFile(Pid fileServer, String srcfname,String sdfsfname) {
+        try {
+            Socket sock = new Socket(fileServer.hostname, fileServer.port+FSPortDelta);
+            Scanner in = new Scanner(new InputStreamReader(sock.getInputStream()));
+            in.useDelimiter("\n");
+            PrintWriter out = new PrintWriter(new OutputStreamWriter(sock.getOutputStream()));
+            out.println(Message.createPutMessage(sdfsfname));
+            out.flush();
+            Message reply = Message.retrieveMessage(in.next());
+            if (reply.type.equals(MessageType.NO))
+                return false;
+
+            DataOutputStream fout = new DataOutputStream(sock.getOutputStream());
+            byte[] buffer = new byte[1024];
+            FileInputStream fileIn = new FileInputStream(srcfname);
+            int readlen;
+            while ((readlen = fileIn.read(buffer)) != -1) {
+                fout.write(buffer, 0, readlen);
+            }
+
+            fout.flush();
+            fileIn.close();
+            sock.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+        return true;
     }
 }

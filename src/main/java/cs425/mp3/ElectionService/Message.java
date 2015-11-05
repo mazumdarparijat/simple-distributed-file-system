@@ -32,9 +32,8 @@ public class Message {
         return ret;
     }
 
-    /** Extract mesage info
-     * @param messageBytes
-     * @param byteLen
+    /** Extract message info
+     * msg
      * @return
      */
     public static Message extractMessage(String msg) {
