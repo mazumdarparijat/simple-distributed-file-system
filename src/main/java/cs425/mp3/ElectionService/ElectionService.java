@@ -115,13 +115,13 @@ public class ElectionService {
 	}
 	public void startES() throws IOException, InterruptedException{
 		setInitialMaster();
-		System.out.println("[Election]: Initial Master Set");
+		System.out.println("[DEBUG][Election]: Initial Master Set");
 		while(true){
 			try{
+				System.out.println("[DEBUG][Election]: Waiting to accept connection");
 				Socket connectionSocket = welcomeSocket.accept();
 				BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
 				String msg=inFromClient.readLine();
-				System.out.println("[DEBUG][Election]: Recieved Message "+msg);
 				if(msg!=null){
 					handleMessage(msg,connectionSocket);
 				}

@@ -63,6 +63,7 @@ public class MasterService {
 			DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
 			BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 			outToServer.writeBytes(msg+'\n');
+			System.out.println("[DEBUG][MASTER]: Message sent "+msg);
 			response =inFromServer.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -71,6 +72,7 @@ public class MasterService {
 		return response;
 	}
 	private void handleMessage(String msg, Socket clientSocket) throws IOException{
+		System.out.println("[DEBUG][MASTER]: Message Recieved "+msg);
 		Message m=Message.extractMessage(msg);
 		if(m.type==MessageType.OK){
 
@@ -170,6 +172,7 @@ public class MasterService {
 					msg);
 	}
 	private void checkReplication(){
+		System.out.println("[DEBUG][MASTER]: Checking Replication");
 		Random rn = new Random();
 		for(Iterator<Map.Entry<String, MutablePair<Set <String>, Long>>> it = filemap.entrySet().iterator(); it.hasNext();){
 			Map.Entry<String, MutablePair<Set <String>, Long>> entry = it.next();
@@ -225,6 +228,7 @@ public class MasterService {
 			introducer_state=FD.isAlive(FD.getIntroID().toString());
 			checkReplication();
 			try{
+				System.out.println("[DEBUG][MASTER]: Waiting to accept connection");
 				Socket connectionSocket = welcomeSocket.accept();
 				BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
 				String msg=inFromClient.readLine();

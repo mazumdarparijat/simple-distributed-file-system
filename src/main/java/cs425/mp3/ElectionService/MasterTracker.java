@@ -72,7 +72,6 @@ public class MasterTracker {
 				String msg=inFromClient.readLine();
 				if(msg!=null){
 					handleMessage(msg,connectionSocket);
-					System.out.println("[DEBUG][Election]: Handled Message "+msg);
 				}
 				connectionSocket.close();
 			}
