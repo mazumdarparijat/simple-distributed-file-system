@@ -17,11 +17,11 @@ import cs425.mp3.ElectionService.Message.MessageBuilder;
  *
  */
 public class ElectionService {
-	private int SERVER_TIMEOUT=500;
+	private int SERVER_TIMEOUT=5000;
 	private final FailureDetector FD;
 	private String master=null;
 	private ServerSocket welcomeSocket;
-	private final int MASTER_PREP_TIME=200;
+	private final int MASTER_PREP_TIME=2000;
 	public ElectionService(int port) throws IOException{
 		FD=sdfsserverMain.FD;
 		welcomeSocket=new ServerSocket(port);
@@ -33,10 +33,11 @@ public class ElectionService {
 			DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
 			BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 			outToServer.writeBytes(msg+'\n');
+			System.out.println("[DEBUG][Election]: Sent Message "+msg);
 			response =inFromServer.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
-			System.out.println("[ERROR][Election]: Sending Message");
+			System.out.println("[ERROR][Election]: Sending Message "+msg);
 		}
 		return response;
 	}
@@ -46,6 +47,7 @@ public class ElectionService {
 		communicate(sdfsserverMain.intro_address,sdfsserverMain.intro_port+sdfsserverMain.ESPortDelta,msg);
 	}
 	private void handleMessage(String msg, Socket clientSocket) throws IOException{
+		System.out.println("[DEBUG][Election]: Recived Message "+msg);
 		Message m=Message.extractMessage(msg);
 		if(m.type==MessageType.MASTER_REPLY){
 			String new_master=m.messageParams[0];
@@ -77,6 +79,7 @@ public class ElectionService {
 			if(response!=null){
 				handleMessage(response,clientSocket);
 			}
+			clientSocket.close();
 		}catch(IOException e){
 			e.printStackTrace();
 			System.out.println("[ERROR][Election]: Unable to communicate with "+add+" on port "+port);

@@ -35,14 +35,16 @@ public class MasterTracker {
 			DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
 			BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 			outToServer.writeBytes(msg+'\n');
+			System.out.println("[DEBUG][Election]: Sent Message "+msg);
 			response =inFromServer.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
-			System.out.println("[ERROR]: Sending Message");
+			System.out.println("[ERROR][Election]: Sending Message");
 		}
 		return response;
 	}
 	private void handleMessage(String msg, Socket clientSocket) throws IOException{
+		System.out.println("[DEBUG][Election]: Recieved Message "+msg);
 		Message m=Message.extractMessage(msg);
 		if(m.type==MessageType.MASTER){
 			String masterID="NOT_SET";
@@ -52,7 +54,7 @@ public class MasterTracker {
 			String msgreply = MessageBuilder.buildMasterReplyMessage(masterID).toString();
 			sendMessage(clientSocket,msgreply);
 		}
-		if(m.type==MessageType.COORDINATOR){
+		else if(m.type==MessageType.COORDINATOR){
 			String new_master=m.messageParams[0];
 			master=new_master;
 			System.out.println("[Election]:"+FD.getSelfID().pidStr);
@@ -64,12 +66,13 @@ public class MasterTracker {
 	public void startMT() {
 		while(true){
 			try{
+				System.out.println("[DEBUG][Election]: Waiting to accept connection");
 				Socket connectionSocket = welcomeSocket.accept();
 				BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
 				String msg=inFromClient.readLine();
-				System.out.println("Recieved Message "+msg);
 				if(msg!=null){
 					handleMessage(msg,connectionSocket);
+					System.out.println("[DEBUG][Election]: Handled Message "+msg);
 				}
 				connectionSocket.close();
 			}

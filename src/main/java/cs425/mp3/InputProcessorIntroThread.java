@@ -9,7 +9,7 @@ public class InputProcessorIntroThread extends Thread{
 	private void processUserCommand(String line) {
         if (line.equals("m")) {
         	System.err.println("MEMBERSHIP LIST");
-        	List<String> memlist = sdfsserverMain.FD.getMemlistSkipIntroducer();
+        	List<String> memlist = sdfsproxyMain.FD.getMemlistSkipIntroducer();
         	for(String member: memlist){
         		System.err.println(member);
         	}
