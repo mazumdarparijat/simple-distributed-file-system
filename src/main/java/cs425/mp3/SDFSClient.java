@@ -31,6 +31,7 @@ public class SDFSClient {
                 if (input[0].equals("exit"))
                     exit=true;
                 else if (input[0].equals("put")) {
+                    System.out.println("put requested");
                     fileOps(input[1],flattenFilename(input[2]),'p');
                 } else if (input[0].equals("get")) {
                     fileOps(flattenFilename(input[1]),input[2],'g');
@@ -49,6 +50,8 @@ public class SDFSClient {
                 System.out.println("arguments not provided correctly!");
                 e.printStackTrace();
             }
+
+            System.out.println("Request handled");
         }
     }
 
@@ -82,13 +85,17 @@ public class SDFSClient {
     }
 
     private static String flattenFilename(String fname) {
-        return fname.replaceAll("/","$");
+        String ret=fname.replace("/", "$");
+        System.out.println("flattened file = "+ret);
+        return ret;
     }
 
     private static Pid getMaster() {
         while (true) {
+            System.out.println("Getting Master");
+            Socket sock=null;
             try {
-                Socket sock = new Socket(introIP, introPort + ElectionPortDelta);
+                sock = new Socket(introIP, introPort + ElectionPortDelta);
                 Scanner in = new Scanner(new InputStreamReader(sock.getInputStream()));
                 in.useDelimiter("\n");
                 PrintWriter out = new PrintWriter(new OutputStreamWriter(sock.getOutputStream()));
@@ -100,10 +107,17 @@ public class SDFSClient {
                 cs425.mp3.ElectionService.Message reply = cs425.mp3.ElectionService
                         .Message
                         .extractMessage(in.next());
-                if (!reply.messageParams[0].equals("NOT_SET"))
+                if (!reply.messageParams[0].equals("NOT_SET")) {
                     return Pid.getPid(reply.messageParams[0]);
+                }
             } catch (IOException e) {
                 e.printStackTrace();
+            } finally {
+                try {
+                    sock.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
 
             System.out.println("Master not set! I will try again.");
@@ -158,6 +172,7 @@ e.printStackTrace();
     private static void fileOps(String srcfname, String destfname,char op) {
         assert op=='p' || op=='g' || op=='d' || op=='l' : "op can only be either p or g.";
         Pid master=getMaster();
+        System.out.println("master = "+master.toString());
         try {
             Socket sock=new Socket(master.hostname,master.port+MasterPortDelta);
             sock.setSoTimeout(2000);
@@ -284,8 +299,11 @@ e.printStackTrace();
                 .buildPutMessage(sdfsfname)
                 .toString());
         soOut.flush();
+        System.out.println("put message sent");
+        String replyString=soIn.next();
+        System.out.println("reply = "+replyString);
         cs425.mp3.ElectionService.Message reply= cs425.mp3.ElectionService.Message
-                .extractMessage(soIn.next());
+                .extractMessage(replyString);
         if (reply.messageParams[0].equals("NOT_OK")) {
             System.out.println("Put operation cannot be completed. File already exists in sdfs");
         } else {

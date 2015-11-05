@@ -10,7 +10,7 @@ import java.util.*;
 
 public class FileServer extends Thread {
     static final String baseDir=System.getProperty("user.home")+"/Desktop/CS425Project/"
-            + sdfsserverMain.FD.getSelfID().toString();
+            + sdfsserverMain.FD.getSelfID().toString()+"/";
     private Set<String> sdfsfilenames;
     private final int port;
     public FileServer(int port) {

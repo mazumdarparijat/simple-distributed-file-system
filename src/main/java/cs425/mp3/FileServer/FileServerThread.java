@@ -56,8 +56,8 @@ class FileServerThread extends Thread {
         try {
             DataOutputStream out=new DataOutputStream(connection.getOutputStream());
             byte [] buffer=new byte[1024];
-            FileInputStream fileIn=new FileInputStream(filename);
-            int readlen=0;
+            FileInputStream fileIn=new FileInputStream(FileServer.baseDir+filename);
+            int readlen;
             while((readlen=fileIn.read(buffer))!=-1) {
                 out.write(buffer,0,readlen);
             }
@@ -77,7 +77,7 @@ class FileServerThread extends Thread {
             in.useDelimiter("\n");
             PrintWriter out=new PrintWriter(new OutputStreamWriter(connection.getOutputStream()));
             Message messageRequest = Message.retrieveMessage(in.next());
-            String fname=FileServer.baseDir+messageRequest.fileName;
+            String fname=messageRequest.fileName;
             if (messageRequest.type.equals(MessageType.GET)) {
                 if (sdfsFiles.contains(fname)) {
                     out.println(Message.createOkayMessage());
@@ -113,7 +113,7 @@ class FileServerThread extends Thread {
 
     private void createSDFSFile(Socket connection, String fileName) throws InterruptedIOException {
         try {
-            FileOutputStream fs=new FileOutputStream(fileName);
+            FileOutputStream fs=new FileOutputStream(FileServer.baseDir+fileName);
             byte[] buffer=new byte[1024];
             DataInputStream in=new DataInputStream(connection.getInputStream());
             int readlen;
