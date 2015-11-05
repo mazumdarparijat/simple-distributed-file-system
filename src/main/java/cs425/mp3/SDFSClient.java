@@ -36,6 +36,10 @@ public class SDFSClient {
                     fileOps(flattenFilename(input[1]),input[2],'g');
                 } else if (input[0].equals("del")) {
                     fileOps(flattenFilename(input[1]),"",'d');
+                } else if (input[0].equals("list")) {
+                    fileOps(flattenFilename(input[1]),"",'l');
+                } else if (input[0].equals("ls")) {
+                    listfiles();
                 } else {
                     System.out.println("argument not recognized. Try again");
                 }
@@ -46,6 +50,35 @@ public class SDFSClient {
                 e.printStackTrace();
             }
         }
+    }
+
+    private static void listfiles() {
+        Pid master=getMaster();
+        try {
+            Socket sock=new Socket(master.hostname,master.port+MasterPortDelta);
+            sock.setSoTimeout(2000);
+            Scanner soIn=new Scanner(new InputStreamReader(sock.getInputStream()));
+            soIn.useDelimiter("\n");
+            PrintWriter soOut=new PrintWriter(new OutputStreamWriter(sock.getOutputStream()),true);
+            soOut.println(cs425.mp3.ElectionService.Message
+                    .MessageBuilder
+                    .buildListMessage(InetAddress.getLocalHost().getHostName()));
+            soOut.flush();
+            if (soIn.hasNext()) {
+                cs425.mp3.ElectionService.Message reply= cs425.mp3.ElectionService
+                        .Message
+                        .extractMessage(soIn.next());
+                System.out.println("Files in the sdfs are the following : ");
+                for (int i=1;i<reply.messageParams.length;i++)
+                    System.out.println(reply.messageParams[i]);
+            } else {
+                System.out.println("ls failed. master is down!");
+            }
+            sock.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private static String flattenFilename(String fname) {
@@ -122,26 +155,8 @@ e.printStackTrace();
 }
 */
 
-    private static void deleteOperation(Scanner in, PrintWriter out, String fname) {
-        out.println(cs425.mp3.ElectionService.Message
-                .MessageBuilder
-                .buildDeleteMessage(fname));
-        out.flush();
-        if (in.hasNext()) {
-            cs425.mp3.ElectionService.Message reply= cs425.mp3.ElectionService
-                    .Message
-                    .extractMessage(in.next());
-            if (reply.messageParams[1].equals("NOT_OK"))
-                System.out.println("file not found in sdfs");
-            else
-                System.out.println("file deleted");
-        } else {
-            System.out.println("delete failed. master is down!");
-        }
-    }
-
     private static void fileOps(String srcfname, String destfname,char op) {
-        assert op=='p' || op=='g' || op=='d' : "op can only be either p or g.";
+        assert op=='p' || op=='g' || op=='d' || op=='l' : "op can only be either p or g.";
         Pid master=getMaster();
         try {
             Socket sock=new Socket(master.hostname,master.port+MasterPortDelta);
@@ -152,16 +167,60 @@ e.printStackTrace();
 
             if (op=='p') {
                 putOperation(soIn, soOut,srcfname,destfname);
-            }
-            else if (op=='g') {
+            } else if (op=='g') {
                 getOperation(soIn, soOut, srcfname, destfname);
             } else if (op=='d') {
                 deleteOperation(soIn,soOut,srcfname);
+            } else if (op=='l') {
+                listOperation(soIn,soOut,srcfname);
+            } else {
+                System.out.println("op not recognized!");
             }
 
             sock.close();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private static void deleteOperation(Scanner in, PrintWriter out, String fname) {
+        out.println(cs425.mp3.ElectionService.Message
+                .MessageBuilder
+                .buildDeleteMessage(fname));
+        out.flush();
+        if (in.hasNext()) {
+            cs425.mp3.ElectionService.Message reply= cs425.mp3.ElectionService
+                    .Message
+                    .extractMessage(in.next());
+            if (reply.messageParams[0].equals("NOT_OK"))
+                System.out.println("file not found in sdfs");
+            else
+                System.out.println("file deleted");
+        } else {
+            System.out.println("delete failed. master is down!");
+        }
+    }
+
+    private static void listOperation(Scanner in, PrintWriter out, String srcfname) {
+        out.println(cs425.mp3.ElectionService.Message
+                .MessageBuilder
+                .buildGetMessage(srcfname)
+                .toString());
+        out.flush();
+        if (in.hasNext()) {
+            cs425.mp3.ElectionService.Message reply= cs425.mp3.ElectionService
+                    .Message
+                    .extractMessage(in.next());
+            if (reply.messageParams[0].equals("NOT_OK"))
+                System.out.println("file not found in sdfs");
+            else {
+                System.out.println("The file is replicated in the following VMs : ");
+                for (int i=1;i<reply.messageParams.length;i++) {
+                    System.out.println(reply.messageParams[i]);
+                }
+            }
+        } else {
+            System.out.println("list failed. master is down!");
         }
     }
 
