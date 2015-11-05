@@ -21,6 +21,7 @@ public class ElectionService {
 	private final FailureDetector FD;
 	private String master=null;
 	private ServerSocket welcomeSocket;
+	private final int MASTER_PREP_TIME=200;
 	public ElectionService(int port) throws IOException{
 		FD=sdfsserverMain.FD;
 		welcomeSocket=new ServerSocket(port);
@@ -35,26 +36,14 @@ public class ElectionService {
 			response =inFromServer.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
-			System.out.println("[ERROR]: Sending Message");
+			System.out.println("[ERROR][Election]: Sending Message");
 		}
 		return response;
 	}
 	private void setInitialMaster() {
-		System.out.println("[Election]: Setting initial master");
-		String msg = MessageBuilder.buildMasterMessage(FD.getSelfID().pidStr).toString();
-		System.out.println("[Election]: Sent Msg: "+msg);
-		try {
-			Socket clientSocket = new Socket(sdfsserverMain.intro_address,sdfsserverMain.intro_port+1);
-			String response=sendMessage(clientSocket,msg);
-			if(response!=null){
-				handleMessage(response,clientSocket);
-			}
-			clientSocket.close();
-		}  catch (IOException e) {
-			e.printStackTrace();
-			System.out.println("[ERROR]: Server not running");
-			System.exit(-1);
-		}
+		System.out.println("[DEBUG][Election]: Setting initial master");
+		String msg = MessageBuilder.buildMasterMessage(FD.getSelfID().toString()).toString();
+		communicate(sdfsserverMain.intro_address,sdfsserverMain.intro_port+sdfsserverMain.ESPortDelta,msg);
 	}
 	private void handleMessage(String msg, Socket clientSocket) throws IOException{
 		Message m=Message.extractMessage(msg);
@@ -67,7 +56,11 @@ public class ElectionService {
 		else if(m.type==MessageType.COORDINATOR){
 			String new_master=m.messageParams[0];
 			master=new_master;
-			String msgreply = MessageBuilder.buildOKMessage(FD.getSelfID().pidStr).toString();
+			String[] files=sdfsserverMain.FS.getFilesInServer().toArray(new String[0]);
+			String msgmaster = MessageBuilder.buildNewfilesMessage(FD.getSelfID().toString(), files).toString();
+			communicate(Pid.getPid(master).hostname,
+					Pid.getPid(master).port+sdfsserverMain.MSPortDelta,msgmaster);
+			String msgreply = MessageBuilder.buildOKMessage(FD.getSelfID().toString()).toString();
 			sendMessage(clientSocket,msgreply);
 		}
 		else if(m.type==MessageType.OK){
@@ -77,6 +70,18 @@ public class ElectionService {
 			throw new IOException("Message not recognized");
 		}
 	} 
+	void communicate(String add, int port, String msg){
+		try{
+			Socket clientSocket=new Socket(add,port);
+			String response=sendMessage(clientSocket,msg);
+			if(response!=null){
+				handleMessage(response,clientSocket);
+			}
+		}catch(IOException e){
+			e.printStackTrace();
+			System.out.println("[ERROR][Election]: Unable to communicate with "+add+" on port "+port);
+		}
+	}
 	private Boolean needElection(){
 		boolean res=false;
 		if(master==null){
@@ -85,44 +90,27 @@ public class ElectionService {
 		else if(!FD.isAlive(master)){
 			res=true;
 		}
-		System.out.println("[Election] needElection:"+res);
 		return res;
 	}
 	private Boolean isPotentialMaster(){
 		List<String> memlist=FD.getMemlistSkipIntroducer();
-		System.out.println("[Election]: Loop Start");
 		for (String m:memlist){
-			System.out.println("[Election]: Element "+m);
-			System.out.println("[Election]: Element Self "+FD.getSelfID().toString());
-			System.out.println(FD.getSelfID().toString().compareTo(m));
 			if(FD.getSelfID().toString().compareTo(m)>=0){
-				System.out.println("[Election] ispotentialMaster False");
 				return false;
 			}
 		}
-		System.out.println("[Election] ispotentialMaster True");
 		return true;
 	} 
-	private void multicastMaster() throws IOException{
+	private void multicastMaster(){
 		List<String> memlist=FD.getMemlistSkipIntroducer();
 		String msg=MessageBuilder.buildCoordMessage(FD.getSelfID().pidStr).toString(); 
 		for (String m:memlist){
-			Pid p = Pid.getPid(m);
-			Socket clientSocket=new Socket(p.hostname,p.port+1);
-			String response=sendMessage(clientSocket,msg);
-			if(response!=null){
-				handleMessage(response,clientSocket);
-			}
-			clientSocket.close();
+				Pid p = Pid.getPid(m);
+				communicate(p.hostname,p.port+sdfsserverMain.ESPortDelta,msg);
 		}
-		Socket clientSocket=new Socket(sdfsserverMain.intro_address,sdfsserverMain.intro_port+1);
-		String response=sendMessage(clientSocket,msg);
-		if(response!=null){
-			handleMessage(response,clientSocket);
-		}
-		clientSocket.close();
+		communicate(sdfsserverMain.intro_address,sdfsserverMain.intro_port+sdfsserverMain.ESPortDelta,msg);
 	}
-	public void startES() throws IOException{
+	public void startES() throws IOException, InterruptedException{
 		setInitialMaster();
 		System.out.println("[Election]: Initial Master Set");
 		while(true){
@@ -130,17 +118,19 @@ public class ElectionService {
 				Socket connectionSocket = welcomeSocket.accept();
 				BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
 				String msg=inFromClient.readLine();
-				System.out.println("[Election]: Recieved Message "+msg);
+				System.out.println("[DEBUG][Election]: Recieved Message "+msg);
 				if(msg!=null){
 					handleMessage(msg,connectionSocket);
 				}
 				connectionSocket.close();
 			}
 			catch(SocketTimeoutException e){
-				System.out.println("[Election]: Timedout");
+				System.out.println("[DEBUG][Election]: Timedout");
 				if(needElection() && isPotentialMaster()){
-					System.out.println("[Election]: set self as Master");
+					System.out.println("[DEBUG][Election]: set self as Master");
 					master=FD.getSelfID().pidStr;
+					sdfsserverMain.launchMaster();
+					Thread.sleep(MASTER_PREP_TIME);
 					multicastMaster();
 				}
 			}

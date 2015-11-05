@@ -22,7 +22,6 @@ public class sdfsproxyMain {
     public static String intro_address="";
     private static boolean isIntroducer=false;
     public static FailureDetector FD;
-    public static SDFSServer FileServer;
     public static MasterTracker MT;
 	/**
 	 * Formats commandline inputs and flags

@@ -12,6 +12,8 @@ public class ElectionServiceThread extends Thread{
 			ES.startES();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
 	}
 }

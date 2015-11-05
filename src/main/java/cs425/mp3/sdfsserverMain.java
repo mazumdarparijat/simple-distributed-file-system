@@ -4,6 +4,9 @@ import java.io.IOException;
 import cs425.mp3.ElectionService.ElectionService;
 import cs425.mp3.FailureDetector.FailureDetector;
 import cs425.mp3.FileServer.FileServer;
+import cs425.mp3.MasterService.MasterService;
+import cs425.mp3.MasterService.MasterServiceThread;
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -22,6 +25,11 @@ public class sdfsserverMain {
     private static boolean isIntroducer=false;
     public static FailureDetector FD;
     public static ElectionService ES;
+    public static MasterService MS;
+    public static FileServer FS;
+    public static final int FSPortDelta=2;
+    public static final int ESPortDelta=1;
+    public static final int MSPortDelta=3;
 	/**
 	 * Formats commandline inputs and flags
 	 */
@@ -67,9 +75,15 @@ public class sdfsserverMain {
      */
     public static void setupServices() throws IOException {
     	FD=new FailureDetector(sdfsserverMain.FDport,sdfsserverMain.intro_address,sdfsserverMain.intro_port);
-    	ES=new ElectionService(FDport+1);
+    	ES=new ElectionService(FDport+ESPortDelta);
+    	MS=new MasterService(FDport+MSPortDelta);
+    	FS=new FileServer(FDport+FSPortDelta);
     }
-
+    public static void launchMaster(){
+    	MasterServiceThread MSThread= new MasterServiceThread(MS);
+    	MSThread.setDaemon(true);
+    	MSThread.start();
+    }
 	public static void main(String [] args) throws IOException, InterruptedException {
 		FormatCommandLineInputs(args);
 		setupServices();
@@ -81,6 +95,10 @@ public class sdfsserverMain {
 		ElectionServiceThread ESThread = new ElectionServiceThread(ES);
 		ESThread.setDaemon(true);
 		ESThread.start();
+		//Start FileServer
+		FS.setDaemon(true);
+		FS.start();
+		
 		//Wait for Failure Detector
 		while(true){
 			if(ES.getMaster()!=null){

@@ -10,6 +10,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -72,21 +73,69 @@ public class MasterService {
 	private void handleMessage(String msg, Socket clientSocket) throws IOException{
 		Message m=Message.extractMessage(msg);
 		if(m.type==MessageType.OK){
-			
+
 		}
 		else if(m.type==MessageType.PUT){
 			String filename=m.messageParams[0];
 			if(filemap.containsKey(filename)){
-				String replymsg=MessageBuilder.buildPutReplyMessage("ALREADY_EXISTS", new String[0]).toString();
+				String replymsg=MessageBuilder.buildPutReplyMessage("NOT_OK", new String[0]).toString();
 				sendMessage(clientSocket,replymsg);
 			}
-			
+			else {
+				List<String> memlist=FD.getMemlistSkipIntroducerWithSelf();
+				Collections.shuffle(memlist);
+				int num=Math.min(memlist.size(), REPLICATION_UNIT);
+				String servers[] = new String[num];
+				for(int i=0;i<num;i++){servers[i]=memlist.get(i);}
+				String replymsg=MessageBuilder.buildPutReplyMessage("OK", servers).toString();
+				sendMessage(clientSocket,replymsg);
+			}
 		}
 		else if(m.type==MessageType.GET){
-			
+			String filename=m.messageParams[0];
+			if(!filemap.containsKey(filename)){
+				String replymsg=MessageBuilder.buildGetReplyMessage("NOT_OK", new String[0]).toString();
+				sendMessage(clientSocket,replymsg);
+			}
+			else{
+				int num=filemap.get(filename).getLeft().size();
+				String servers[] = new String[num];
+				int idx=0;
+				for(String server: filemap.get(filename).getLeft()){
+					servers[idx]=server;
+					idx++;
+				}
+				String replymsg=MessageBuilder.buildGetReplyMessage("OK", servers).toString();
+				sendMessage(clientSocket,replymsg);
+			}
+		}
+		else if(m.type==MessageType.LIST){
+			String[] files = (new ArrayList<String>(filemap.keySet())).toArray(new String[0]);
+			String replymsg=MessageBuilder.buildListReplyMessage(FD.getSelfID().toString(), files).toString();
+			sendMessage(clientSocket,replymsg);
 		}
 		else if(m.type==MessageType.DELETE){
-			
+			String filename=m.messageParams[0];
+			if(!filemap.containsKey(filename)){
+				String replymsg=MessageBuilder.buildDeleteReplyMessage("NOT_OK").toString();
+				sendMessage(clientSocket,replymsg);
+			}
+			else{
+				for(String server: filemap.get(filename).getLeft()){
+					String delmsg=cs425.mp3.FileServer.Message.createDelMessage(filename).toString();
+					try{
+						Socket connectionSocket=new Socket(Pid.getPid(server).hostname,Pid.getPid(server).port+sdfsserverMain.FSPortDelta);
+						sendMessage(connectionSocket,delmsg);
+						connectionSocket.close();
+					}catch(IOException e){
+						e.printStackTrace();
+						System.out.println("[ERROR][MASTER]: Error sending delete to "+server);
+					}
+				}
+				filemap.remove(filename);
+				String replymsg=MessageBuilder.buildDeleteReplyMessage("OK").toString();
+				sendMessage(clientSocket,replymsg);
+			}
 		}
 		else if(m.type==MessageType.NEWFILES){
 			String serverid=m.messageParams[0];
@@ -94,15 +143,16 @@ public class MasterService {
 			for(int i=1;i<=numfiles;i++){
 				updateFileMap(serverid,m.messageParams[i]);
 			}
+			String msgreply=MessageBuilder.buildOKMessage(FD.getSelfID().toString()).toString();
+			sendMessage(clientSocket,msgreply);
 		}
 		else{
 			throw new IOException("Message not recognized");
 		}
 	} 
-	private void informIntro(){
+	void communicate(String add, int port, String msg){
 		try{
-			Socket clientSocket=new Socket(FD.getIntroID().hostname,FD.getIntroID().port+1);
-			String msg=MessageBuilder.buildCoordMessage(FD.getSelfID().pidStr).toString(); 
+			Socket clientSocket=new Socket(add,port);
 			String response=sendMessage(clientSocket,msg);
 			if(response!=null){
 				handleMessage(response,clientSocket);
@@ -110,8 +160,14 @@ public class MasterService {
 			clientSocket.close();
 		}catch(IOException e){
 			e.printStackTrace();
-			System.out.println("[ERROR] [MASTER]: Informing Master to Introducer");
+			System.out.println("[ERROR][Election]: Unable to communicate with "+add+" on port "+port);
 		}
+	}
+	private void informIntro(){
+			String msg=MessageBuilder.buildCoordMessage(FD.getSelfID().pidStr).toString(); 
+			communicate(sdfsserverMain.intro_address,
+					sdfsserverMain.intro_port+sdfsserverMain.ESPortDelta,
+					msg);
 	}
 	private void checkReplication(){
 		Random rn = new Random();
@@ -140,10 +196,10 @@ public class MasterService {
 								}
 								else{
 									try{
-										Socket clientSocket=new Socket(Pid.getPid(serverid).hostname,Pid.getPid(serverid).port+2);
 										Pid source=Pid.getPid(replicaServersList.get(rn.nextInt(replicaServers.size())));
 										String msg=cs425.mp3.FileServer.Message.createReplicateMessage
-												(filename, source.hostname, source.port+2).toString(); 
+												(filename, source.hostname, source.port+sdfsserverMain.FSPortDelta).toString();
+										Socket clientSocket=new Socket(Pid.getPid(serverid).hostname,Pid.getPid(serverid).port+sdfsserverMain.FSPortDelta);
 										sendMessage(clientSocket,msg);
 										clientSocket.close();
 										count++;
