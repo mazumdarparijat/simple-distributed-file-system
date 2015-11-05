@@ -100,7 +100,7 @@ public class Message {
         	args[0]=filename;
         	return new Message(MessageType.DELETE,args);
         }
-        public static Message buildGetReplyMessage(String validity) {
+        public static Message buildDeleteReplyMessage(String validity) {
         	String [] args = new String[1];
         	args[0]=validity;
         	return new Message(MessageType.DELETE_REPLY,args);
