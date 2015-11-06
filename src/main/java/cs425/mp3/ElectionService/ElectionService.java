@@ -108,14 +108,18 @@ public class ElectionService {
 		List<String> memlist=FD.getMemlistSkipIntroducer();
 		String msg=MessageBuilder.buildCoordMessage(FD.getSelfID().pidStr).toString(); 
 		for (String m:memlist){
-				Pid p = Pid.getPid(m);
-				communicate(p.hostname,p.port+sdfsserverMain.ESPortDelta,msg);
+			System.out.println("[DEBUG][ELECTION]: communicating with "+m);
+			Pid p = Pid.getPid(m);
+			communicate(p.hostname, p.port + sdfsserverMain.ESPortDelta, msg);
 		}
-		communicate(sdfsserverMain.intro_address,sdfsserverMain.intro_port+sdfsserverMain.ESPortDelta,msg);
+
+		communicate(sdfsserverMain.intro_address, sdfsserverMain.intro_port + sdfsserverMain.ESPortDelta, msg);
+		System.out.println("[DEBUG][ELECTION]: sent master notification to intro");
 	}
 	public void startES() throws IOException, InterruptedException{
 		setInitialMaster();
-		System.out.println("[DEBUG][Election]: Initial Master Set");
+
+		System.out.println("[DEBUG][Election]: Initial Master Set : "+master);
 		while(true){
 			try{
 				System.out.println("[DEBUG][Election]: Waiting to accept connection");
@@ -132,7 +136,7 @@ public class ElectionService {
 				if(needElection() && isPotentialMaster()){
 					System.out.println("[DEBUG][Election]: set self as Master");
 					master=FD.getSelfID().pidStr;
-					sdfsserverMain.launchMaster();
+					sdfsserverMain.launchMaster(sdfsserverMain.FS.getFilesInServer());
 					Thread.sleep(MASTER_PREP_TIME);
 					multicastMaster();
 				}

@@ -1,6 +1,8 @@
 package cs425.mp3;
 
 import java.io.IOException;
+import java.util.List;
+
 import cs425.mp3.ElectionService.ElectionService;
 import cs425.mp3.FailureDetector.FailureDetector;
 import cs425.mp3.FileServer.FileServer;
@@ -79,7 +81,8 @@ public class sdfsserverMain {
     	MS=new MasterService(FDport+MSPortDelta);
     	FS=new FileServer(FDport+FSPortDelta);
     }
-    public static void launchMaster(){
+    public static void launchMaster(List<String> filenames){
+		MS.updateSelfFiles(FS.getFilesInServer());
     	MasterServiceThread MSThread= new MasterServiceThread(MS);
     	MSThread.setDaemon(true);
     	MSThread.start();
@@ -91,6 +94,7 @@ public class sdfsserverMain {
 		FailureDetectorThread FDThread = new FailureDetectorThread(FD);
 		FDThread.setDaemon(true);
 		FDThread.start();
+		Thread.sleep(2000);
 		//Start Election Service
 		ElectionServiceThread ESThread = new ElectionServiceThread(ES);
 		ESThread.setDaemon(true);

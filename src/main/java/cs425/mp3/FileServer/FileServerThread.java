@@ -12,6 +12,7 @@ import java.util.Set;
  * Created by parijatmazumdar on 03/11/15.
  */
 class FileServerThread extends Thread {
+    private static final int MasterPortDelta=3;
     Socket socket;
     Set<String> sdfsFiles;
     FileServerThread(Socket sock, Set<String> sdfsfiles) {
@@ -21,7 +22,10 @@ class FileServerThread extends Thread {
 
     @Override
     public void run() {
-        handleRequest(socket);
+        handleRequest();
+    }
+
+    private void closeSocket() {
         try {
             socket.close();
         } catch (IOException e) {
@@ -31,8 +35,9 @@ class FileServerThread extends Thread {
 
 
     private boolean replicateSDFSFile(String fileName, String ipAddress, int port) {
+        Socket socket=null;
         try {
-            Socket socket=new Socket(ipAddress,port);
+            socket=new Socket(ipAddress,port);
             socket.setSoTimeout(2000);
             Scanner soIn=new Scanner(new InputStreamReader(socket.getInputStream()));
             soIn.useDelimiter("\n");
@@ -47,14 +52,20 @@ class FileServerThread extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
             return false;
+        } finally {
+            try {
+                socket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         return true;
     }
 
-    private void sendSDFSFile(Socket connection,String filename) {
+    private void sendSDFSFile(String filename) {
         try {
-            DataOutputStream out=new DataOutputStream(connection.getOutputStream());
+            DataOutputStream out=new DataOutputStream(socket.getOutputStream());
             byte [] buffer=new byte[1024];
             FileInputStream fileIn=new FileInputStream(FileServer.baseDir+filename);
             int readlen;
@@ -71,22 +82,24 @@ class FileServerThread extends Thread {
         }
     }
 
-    private void handleRequest(Socket connection) {
+    private void handleRequest() {
         try {
-            Scanner in=new Scanner(new InputStreamReader(connection.getInputStream()));
+            Scanner in=new Scanner(new InputStreamReader(socket.getInputStream()));
             in.useDelimiter("\n");
-            PrintWriter out=new PrintWriter(new OutputStreamWriter(connection.getOutputStream()));
+            PrintWriter out=new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
             Message messageRequest = Message.retrieveMessage(in.next());
             String fname=messageRequest.fileName;
             if (messageRequest.type.equals(MessageType.GET)) {
                 if (sdfsFiles.contains(fname)) {
                     out.println(Message.createOkayMessage());
                     out.flush();
-                    sendSDFSFile(connection,fname);
+                    sendSDFSFile(fname);
                 } else {
                     out.println(Message.createNayMessage());
                     out.flush();
                 }
+
+                closeSocket();
             } else if (messageRequest.type.equals(MessageType.PUT)) {
                 if (sdfsFiles.contains(fname)) {
                     out.println(Message.createNayMessage());
@@ -94,34 +107,40 @@ class FileServerThread extends Thread {
                 } else {
                     out.println(Message.createOkayMessage());
                     out.flush();
-                    createSDFSFile(connection,fname);
+                    createSDFSFile(socket,fname);
                 }
+
+                closeSocket();
             } else if (messageRequest.type.equals(MessageType.REP)) {
-                replicateSDFSFile(fname,
-                        messageRequest.ipAddress,messageRequest.port);
+                closeSocket();
+                replicateSDFSFile(fname,messageRequest.ipAddress,messageRequest.port);
             } else if (messageRequest.type.equals(MessageType.DEL)) {
                 new File(fname).delete();
                 sdfsFiles.remove(fname);
+                closeSocket();
             } else {
                 System.out.println("Not Implemented");
+                closeSocket();
                 System.exit(1);
             }
         } catch (IOException e) {
+            closeSocket();
             e.printStackTrace();
         }
     }
 
-    private void createSDFSFile(Socket connection, String fileName) throws InterruptedIOException {
+    private void createSDFSFile(Socket socket, String fileName) throws InterruptedIOException {
         try {
             FileOutputStream fs=new FileOutputStream(FileServer.baseDir+fileName);
             byte[] buffer=new byte[1024];
-            DataInputStream in=new DataInputStream(connection.getInputStream());
+            DataInputStream in=new DataInputStream(socket.getInputStream());
             int readlen;
             while ((readlen=in.read(buffer))>0) {
                 fs.write(buffer,0,readlen);
             }
 
             fs.close();
+            System.out.println("[DEBUG][FILE_SERVER] new file in server : "+fileName);
             sdfsFiles.add(fileName);
             notifyFileAdd(fileName);
         } catch (FileNotFoundException e) {
@@ -134,17 +153,18 @@ class FileServerThread extends Thread {
     private void notifyFileAdd(String fileName) {
         Pid master=sdfsserverMain.ES.getMasterPid();
         try {
-            Socket sock=new Socket(master.hostname,master.port);
-            Scanner in=new Scanner(new InputStreamReader(sock.getInputStream()));
+            Socket sock=new Socket(master.hostname,master.port+MasterPortDelta);
+            BufferedReader in= new BufferedReader(new InputStreamReader(sock.getInputStream()));
             PrintWriter out=new PrintWriter(new OutputStreamWriter(sock.getOutputStream()));
             String [] filenames={fileName};
             out.println(cs425.mp3.ElectionService.Message
                     .MessageBuilder
                     .buildNewfilesMessage(sdfsserverMain.FD.getSelfID().toString(),filenames)
                     .toString());
-            if (in.hasNext()) {
-                in.next();
-            }
+            out.flush();
+            System.out.println("[DEBUG][FILE_SERVER]: notified master");
+            in.readLine();
+            System.out.println("[DEBUG][FILE_SERVER]: notify ack master");
 
             sock.close();
         } catch (IOException e) {

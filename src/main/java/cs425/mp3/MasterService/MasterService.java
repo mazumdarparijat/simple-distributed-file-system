@@ -45,6 +45,11 @@ public class MasterService {
 			filemap.put(filename, new MutablePair<Set<String>,Long>(s,timestamp));
 		}
 	}
+	public void updateSelfFiles(List<String> filenames){
+		for(String filename: filenames){
+			updateFileMap(FD.getSelfID().toString(),filename);
+		}
+	}
 	public MasterService(int port){
 		FD=sdfsserverMain.FD;
 		filemap=new HashMap<String,MutablePair<Set <String>, Long>>();
@@ -177,7 +182,9 @@ public class MasterService {
 		for(Iterator<Map.Entry<String, MutablePair<Set <String>, Long>>> it = filemap.entrySet().iterator(); it.hasNext();){
 			Map.Entry<String, MutablePair<Set <String>, Long>> entry = it.next();
 			String filename=entry.getKey();
+			System.out.println("[DEBUG][MASTER] Checking replication for " + filename);
 			if((System.currentTimeMillis()-filemap.get(filename).getRight().longValue() )> REPLICATION_TIMEOUT){
+				System.out.println("[DEBUG][MASTER] Replication timedout for " + filename);
 				Set<String> replicaServers=filemap.get(filename).getLeft();
 				for(String serverid: new HashSet<String>(replicaServers)){
 					if(!FD.isAlive(serverid)){
@@ -189,15 +196,14 @@ public class MasterService {
 				}
 				else{
 					List<String> memlist=FD.getMemlistSkipIntroducerWithSelf();
+					Collections.shuffle(memlist);
 					List<String> replicaServersList=new ArrayList<String>(replicaServers);
-					if(replicaServers.size()<REPLICATION_UNIT &&(memlist.size()>=REPLICATION_UNIT)){
-						int count=0;
+					if(replicaServers.size()<REPLICATION_UNIT &&(memlist.size()>replicaServers.size())){
+						System.out.println("[DEBUG][MASTER] Replication True for file "+filename);
+						int count=replicaServers.size();
 						for(String serverid: memlist){
 							if(count<REPLICATION_UNIT){
-								if(replicaServers.contains(serverid)){
-									count++;
-								}
-								else{
+								if(!replicaServers.contains(serverid)){
 									try{
 										Pid source=Pid.getPid(replicaServersList.get(rn.nextInt(replicaServers.size())));
 										String msg=cs425.mp3.FileServer.Message.createReplicateMessage
