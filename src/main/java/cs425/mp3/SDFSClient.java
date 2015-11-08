@@ -33,9 +33,10 @@ public class SDFSClient {
                 if (input[0].equals("exit"))
                     exit=true;
                 else if (input[0].equals("put")) {
-                    System.out.println("put requested");
+                    System.out.println("put requested at time : "+System.currentTimeMillis());
                     fileOps(input[1],flattenFilename(input[2]),'p');
                 } else if (input[0].equals("get")) {
+                    System.out.println("get requested at time : "+System.currentTimeMillis());
                     fileOps(flattenFilename(input[1]),input[2],'g');
                 } else if (input[0].equals("del")) {
                     fileOps(flattenFilename(input[1]),"",'d');
@@ -53,7 +54,7 @@ public class SDFSClient {
                 e.printStackTrace();
             }
 
-            System.out.println("Request handled");
+            System.out.println("Request handling done at time : "+System.currentTimeMillis());
         }
     }
 
