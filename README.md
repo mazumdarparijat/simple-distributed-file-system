@@ -12,11 +12,8 @@ The allowed file ops include: put localfilename sdfsfilename
 delete sdfsfilename, ls (list files present in SDFS) and list sdfsfilename (lists the VM's having replica of the file).
 
 ## Design
-In this MP we implemented Failure detector module as a set of daemon threads along with the main application thread. 
-We spawned three threads in total apart from the main application. Two of those threads were responsible for sending and receiving failure detector module messages over UDP, and one final thread for TCP connection only used to get membership list from introducer when a process joins the group.
-
-We used a special introducer node which was responsible for making new processes join the group. Although we used a special introducer node in our implementation it is fault tolerant in the way that, even if introducer fails rest of the processes can continue failure detector module without any problem, and introducer failure only limits joining new processes in the group. Our application is fast (detects failure within 3 seconds and disseminates within 6 sec), complete and consistent with very low false positive rate. We took into account various cases involving introducer failure, high network latencies and scalability while implementing the MP.
-
+There are 4 different services in each SDFS server : the failure detector, the election layer, the file server layer and the master layer. The entire system consists of many identical SDFS servers and one SDFS proxy server. The SDFS proxy server is assumed to be the endpoint for this SDFS service. So all clients communicate with this SDFS proxy server to get the current master among the SDFS servers. The SDFS proxy server acts as the introducer in group membership protocol and does not store any file as part of its service. If the SDFS proxy fails we assume that no new node can join the SDFS service cluster and no client requests can be handled until the SDFS proxy is back again. The failure detector uses SWIM algorithm that we implemented in MP2. The election layer uses a simplified bully algorithm. The algorithm is as follows : If a node detects failure of master using the failure detector layer, it calls for election and checks if it is next in line to be master. If not, it waits for coordinator message (and times out if not received). If it is the next in line to be master, it multicasts coordinator messages to all members in the group which send back okay messages if they agree. The check if it is potential master is possible by using group membership list. Finally the SDFS proxy server is let known who the master is. 
+The master stores a list of which files are replicated by which nodes and periodically checks the replication of all files. if replication drops to less than 3 (due to some node failure), it asks a randomly chosen alive server to replicate the file. The master also handles requests from clients. During put, the client requests 3 servers from the master to put data in and then the client writes to as many of these 3 as it can. So we are doing active replication. This ensures that despite 2 failures at a time, we still have one copy of the file still left. For get request, the client gets list of servers with file from master and then gets the file from server. For delete, the client sends the request to the master, the master then relays the request itself to the individual servers containing the file.
  
 ## Package Dependencies
 - Java 7
@@ -46,5 +43,5 @@ You can run any number of Fileservers you want in the group
 You can run any number of clients you want in the group and at any machine
 1. ssh into the vm machine: ```ssh <NETID>@fa15-cs425-gNN-XX.cs.illinois.edu```
 2. cd into the project root directory
-3. run ```scripts/run_sdfsclient.sh > ```
+3. run ```scripts/run_sdfsclient.sh ```
 4. Input fileops commands into client
