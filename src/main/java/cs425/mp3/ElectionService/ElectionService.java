@@ -17,11 +17,11 @@ import cs425.mp3.ElectionService.Message.MessageBuilder;
  *
  */
 public class ElectionService {
-	private int SERVER_TIMEOUT=5000;
+	private int SERVER_TIMEOUT=100;
 	private final FailureDetector FD;
 	private String master=null;
 	private ServerSocket welcomeSocket;
-	private final int MASTER_PREP_TIME=2000;
+	private final int MASTER_PREP_TIME=50;
 	public ElectionService(int port) throws IOException{
 		FD=sdfsserverMain.FD;
 		welcomeSocket=new ServerSocket(port);

@@ -29,7 +29,7 @@ public class InputProcessorThread extends Thread{
         }else if (line.equals("f")){
         	System.err.println("Files Stored");
         	for (String filename : sdfsserverMain.FS.getFilesInServer()){
-        		System.err.println(filename);
+        		System.err.println(filename.replace('$','/'));
         	}
         } 
         else {

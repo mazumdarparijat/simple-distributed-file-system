@@ -25,6 +25,7 @@ public class sdfsserverMain {
     public static int intro_port=0;
     public static String intro_address="";
     private static boolean isIntroducer=false;
+	private static int SERVICE_START_DELAY=100;
     public static FailureDetector FD;
     public static ElectionService ES;
     public static MasterService MS;
@@ -94,7 +95,7 @@ public class sdfsserverMain {
 		FailureDetectorThread FDThread = new FailureDetectorThread(FD);
 		FDThread.setDaemon(true);
 		FDThread.start();
-		Thread.sleep(2000);
+		Thread.sleep(SERVICE_START_DELAY);
 		//Start Election Service
 		ElectionServiceThread ESThread = new ElectionServiceThread(ES);
 		ESThread.setDaemon(true);

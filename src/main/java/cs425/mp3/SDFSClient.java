@@ -26,6 +26,8 @@ public class SDFSClient {
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         boolean exit=false;
         while(!exit) {
+            System.out.println("press exit to end, put srcfilename sdfsfilename," +
+                    " get sdfsfilename destfilename, del sdfsfilename, list sdfsfilename, ls");
             try {
                 String [] input=br.readLine().split(" ");
                 if (input[0].equals("exit"))
@@ -73,7 +75,7 @@ public class SDFSClient {
                         .extractMessage(soIn.next());
                 System.out.println("Files in the sdfs are the following : ");
                 for (int i=1;i<reply.messageParams.length;i++)
-                    System.out.println(reply.messageParams[i]);
+                    System.out.println(unflattenFilename(reply.messageParams[i]));
             } else {
                 System.out.println("ls failed. master is down!");
             }
@@ -82,6 +84,11 @@ public class SDFSClient {
             e.printStackTrace();
         }
 
+    }
+
+    private static String unflattenFilename(String fname) {
+        String ret=fname.replace("$", "/");
+        return ret;
     }
 
     private static String flattenFilename(String fname) {
@@ -128,46 +135,6 @@ public class SDFSClient {
             }
         }
     }
-
-/*
-private static void replicateFile(String filename, String ip, int port) {
-Scanner soIn=null;
-PrintWriter soOut=null;
-Socket sock=null;
-try {
-sock=new Socket(introIP,introPort);
-sock.setSoTimeout(2000);
-soIn=new Scanner(new InputStreamReader(sock.getInputStream()));
-soIn.useDelimiter("\n");
-soOut=new PrintWriter(new OutputStreamWriter(sock.getOutputStream()),true);
-} catch (IOException e) {
-e.printStackTrace();
-}
-
-soOut.println(Message.createReplicateMessage(filename, ip, port));
-soOut.flush();
-
-try {
-Message reply=Message.retrieveMessage(soIn.next());
-if (reply.type.equals(MessageType.YES)) {
-System.out.println("replication done");
-} else if (reply.type.equals(MessageType.NO)) {
-System.out.println("Nay received");
-} else {
-System.out.println("idk");
-}
-} catch (IOException e) {
-e.printStackTrace();
-}
-
-try {
-sock.close();
-} catch (IOException e) {
-e.printStackTrace();
-}
-
-}
-*/
 
     private static void fileOps(String srcfname, String destfname,char op) {
         assert op=='p' || op=='g' || op=='d' || op=='l' : "op can only be either p or g.";
