@@ -5,7 +5,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
+/** Thread Class for processing user input in SDFSServer
+ * 
+ */
 public class InputProcessorThread extends Thread{
+	
+	/**Process user input
+	 * @param line
+	 */
 	private void processUserCommand(String line) {
         if (line.equals("m")) {
         	System.err.println("MEMBERSHIP LIST");

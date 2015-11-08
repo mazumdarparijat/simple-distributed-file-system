@@ -1,15 +1,14 @@
 package cs425.mp3.FileServer;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.Serializable;
 
 /**
- * Created by parijatmazumdar on 02/11/15.
+ * Class Message
  */
 public class Message implements Serializable {
-    public static final String EOF="$$$";
+	private static final long serialVersionUID = 1L;
+	public static final String EOF="$$$";
     private static final String ARG_SEPARATOR=" ";
     public final MessageType type;
     protected final String fileName;
@@ -38,6 +37,9 @@ public class Message implements Serializable {
     }
 
     @Override
+    /** Gets String from message
+     * @return String of the message
+     */
     public String toString() {
         return type.toString()+ARG_SEPARATOR+fileName+ARG_SEPARATOR+ipAddress+ARG_SEPARATOR+String.valueOf(port);
     }
@@ -65,7 +67,10 @@ public class Message implements Serializable {
     public static Message createNayMessage() {
         return new Message(MessageType.NO);
     }
-
+    /** Extract message info
+     * @param msg
+     * @return
+     */
     public static Message retrieveMessage(String message) throws IOException {
         String [] args=message.split(ARG_SEPARATOR);
         return new Message(MessageType.fromString(args[0]),args[1],args[2],Integer.parseInt(args[3]));

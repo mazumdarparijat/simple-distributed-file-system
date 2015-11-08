@@ -13,18 +13,17 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
-/**Main class for FD
+/**Main class for SDFSProxy
  * 
  */
 public class sdfsproxyMain {
     private static int FDport=0;
     public static int intro_port=0;
     public static String intro_address="";
-    private static boolean isIntroducer=false;
     public static FailureDetector FD;
     public static MasterTracker MT;
 	/**
-	 * Formats commandline inputs and flags
+	 * Formats commandLine inputs and flags
 	 */
 	private static void FormatCommandLineInputs(String [] args) {
 		Options op=createOptions();
@@ -36,8 +35,7 @@ public class sdfsproxyMain {
 			printHelp(op);
 			e.printStackTrace();
 		}
-        isIntroducer=true;
-		sdfsproxyMain.FDport = Integer.parseInt(line.getOptionValue("port"));
+        sdfsproxyMain.FDport = Integer.parseInt(line.getOptionValue("port"));
 	}
 	/** Creates the required options to look for in command line arguments
 	 * @return Options object
@@ -58,7 +56,7 @@ public class sdfsproxyMain {
 		formatter.printHelp("failureDetector", op);
 	}
 
-    /**Start FD module
+    /**Setup Failure Detector and Master Tracker
      * @return
      * @throws IOException 
      */
@@ -67,6 +65,11 @@ public class sdfsproxyMain {
     	MT=new MasterTracker(FDport+1);
     }
 
+	/**Main function for launching SDFSProxy
+	 * @param args
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
 	public static void main(String [] args) throws IOException, InterruptedException {
 		FormatCommandLineInputs(args);
 		setupServices();
@@ -82,7 +85,6 @@ public class sdfsproxyMain {
 		InputProcessorIntroThread InputThread = new InputProcessorIntroThread();
 		InputThread.setDaemon(true);
 		InputThread.start();
-		
 		FDThread.join();
 	}
 }

@@ -8,6 +8,9 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.*;
 
+/**Class for local File Server
+ *
+ */
 public class FileServer extends Thread {
     static final String baseDir=System.getProperty("user.home")+"/Desktop/CS425Project/"
             + sdfsserverMain.FD.getSelfID().toString()+"/";
@@ -24,6 +27,9 @@ public class FileServer extends Thread {
         }
     }
 
+    /**Getter method to get meta data of local files
+     * @return
+     */
     public ArrayList<String> getFilesInServer() {
         ArrayList<String> ret=new ArrayList<String>();
         for (String s : sdfsfilenames)
@@ -33,8 +39,9 @@ public class FileServer extends Thread {
     }
     @Override
     public void run() {
+    	ServerSocket listener=null;
         try {
-            ServerSocket listener=new ServerSocket(this.port);
+            listener=new ServerSocket(this.port);
             System.out.println(listener.getLocalSocketAddress() + ":" + listener.getLocalPort());
             while(true) {
                 Socket connection=listener.accept();
@@ -44,7 +51,5 @@ public class FileServer extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 }

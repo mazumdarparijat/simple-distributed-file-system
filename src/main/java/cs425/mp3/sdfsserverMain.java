@@ -17,15 +17,14 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
-/**Main class for FD
+/**Main class for SDFSServer
  * 
  */
 public class sdfsserverMain {
     private static int FDport=0;
     public static int intro_port=0;
     public static String intro_address="";
-    private static boolean isIntroducer=false;
-	private static int SERVICE_START_DELAY=100;
+    private static int SERVICE_START_DELAY=100;
     public static FailureDetector FD;
     public static ElectionService ES;
     public static MasterService MS;
@@ -34,7 +33,7 @@ public class sdfsserverMain {
     public static final int ESPortDelta=1;
     public static final int MSPortDelta=3;
 	/**
-	 * Formats commandline inputs and flags
+	 * Formats commandLine inputs and flags
 	 */
 	private static void FormatCommandLineInputs(String [] args) {
 		Options op=createOptions();
@@ -46,8 +45,7 @@ public class sdfsserverMain {
 			printHelp(op);
 			e.printStackTrace();
 		}
-        isIntroducer=false;
-		sdfsserverMain.FDport = Integer.parseInt(line.getOptionValue("port"));
+        sdfsserverMain.FDport = Integer.parseInt(line.getOptionValue("port"));
 		sdfsserverMain.intro_address=line.getOptionValues("i")[0];
 		sdfsserverMain.intro_port=Integer.parseInt(line.getOptionValues("i")[1]);
 	}
@@ -72,7 +70,7 @@ public class sdfsserverMain {
 		formatter.printHelp("failureDetector", op);
 	}
 
-    /**Start FD module
+    /**Setup Failure Detector, Election Service, Master Service and FileServer
      * @return
      * @throws IOException 
      */
@@ -82,16 +80,25 @@ public class sdfsserverMain {
     	MS=new MasterService(FDport+MSPortDelta);
     	FS=new FileServer(FDport+FSPortDelta);
     }
+    
+    /**Launches Master Service when self is Master
+     * @param filenames
+     */
     public static void launchMaster(List<String> filenames){
 		MS.updateSelfFiles(FS.getFilesInServer());
     	MasterServiceThread MSThread= new MasterServiceThread(MS);
     	MSThread.setDaemon(true);
     	MSThread.start();
     }
+	/**Main function for launching SDFSServer
+	 * @param args
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
 	public static void main(String [] args) throws IOException, InterruptedException {
 		FormatCommandLineInputs(args);
 		setupServices();
-		//Start Faliure Detector
+		//Start Failure Detector
 		FailureDetectorThread FDThread = new FailureDetectorThread(FD);
 		FDThread.setDaemon(true);
 		FDThread.start();

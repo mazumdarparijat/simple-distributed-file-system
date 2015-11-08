@@ -12,8 +12,8 @@ import cs425.mp3.FailureDetector.FailureDetector;
 import cs425.mp3.Pid;
 import cs425.mp3.sdfsserverMain;
 import cs425.mp3.ElectionService.Message.MessageBuilder;
-/**
- * Class for SDFSServer Module
+
+/** Election Service Class
  *
  */
 public class ElectionService {
@@ -27,6 +27,11 @@ public class ElectionService {
 		welcomeSocket=new ServerSocket(port);
 		welcomeSocket.setSoTimeout(SERVER_TIMEOUT);
 	}
+	/**Send Message over TCP to clientSocket
+	 * @param clientSocket
+	 * @param msg
+	 * @return
+	 */
 	private String sendMessage(Socket clientSocket, String msg) {
 		String response=null;
 		try {
@@ -41,11 +46,19 @@ public class ElectionService {
 		}
 		return response;
 	}
+	/**Set Initial Master when launched
+	 * 
+	 */
 	private void setInitialMaster() {
 		System.out.println("[DEBUG][Election]: Setting initial master");
 		String msg = MessageBuilder.buildMasterMessage(FD.getSelfID().toString()).toString();
 		communicate(sdfsserverMain.intro_address,sdfsserverMain.intro_port+sdfsserverMain.ESPortDelta,msg);
 	}
+	/**Handle reply from clientSocket
+	 * @param msg
+	 * @param clientSocket
+	 * @throws IOException
+	 */
 	private void handleMessage(String msg, Socket clientSocket) throws IOException{
 		System.out.println("[DEBUG][Election]: Recived Message "+msg);
 		Message m=Message.extractMessage(msg);
@@ -72,6 +85,11 @@ public class ElectionService {
 			throw new IOException("Message not recognized");
 		}
 	} 
+	/**Communicate message to other processes
+	 * @param add
+	 * @param port
+	 * @param msg
+	 */
 	void communicate(String add, int port, String msg){
 		try{
 			Socket clientSocket=new Socket(add,port);
@@ -85,6 +103,9 @@ public class ElectionService {
 			System.out.println("[ERROR][Election]: Unable to communicate with "+add+" on port "+port);
 		}
 	}
+	/**Indicates whether election is needed
+	 * @return
+	 */
 	private Boolean needElection(){
 		boolean res=false;
 		if(master==null){
@@ -95,6 +116,9 @@ public class ElectionService {
 		}
 		return res;
 	}
+	/**Indicates whether self is potential master
+	 * @return
+	 */
 	private Boolean isPotentialMaster(){
 		List<String> memlist=FD.getMemlistSkipIntroducer();
 		for (String m:memlist){
@@ -104,6 +128,9 @@ public class ElectionService {
 		}
 		return true;
 	} 
+	/**MultiCast New master to other in group
+	 * 
+	 */
 	private void multicastMaster(){
 		List<String> memlist=FD.getMemlistSkipIntroducer();
 		String msg=MessageBuilder.buildCoordMessage(FD.getSelfID().pidStr).toString(); 
@@ -116,6 +143,10 @@ public class ElectionService {
 		communicate(sdfsserverMain.intro_address, sdfsserverMain.intro_port + sdfsserverMain.ESPortDelta, msg);
 		System.out.println("[DEBUG][ELECTION]: sent master notification to intro");
 	}
+	/**Start Election Service
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
 	public void startES() throws IOException, InterruptedException{
 		setInitialMaster();
 
@@ -146,9 +177,15 @@ public class ElectionService {
 			}
 		}
 	}
+	/**Getter method for Master
+	 * @return
+	 */
 	public String getMaster(){
 		return master;
 	}
+	/**Getter method for master
+	 * @return
+	 */
 	public Pid getMasterPid(){
 		return Pid.getPid(master);
 	}

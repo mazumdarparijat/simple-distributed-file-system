@@ -8,8 +8,9 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.util.Scanner;
 
-/**
- * Created by parijatmazumdar on 02/11/15.
+
+/** Class for SDFSClient
+ * 
  */
 public class SDFSClient {
     private static String introIP;
@@ -18,11 +19,14 @@ public class SDFSClient {
     private static final int FSPortDelta=2;
     private static final int MasterPortDelta=3;
 
+    /**Main function for SDFSClient
+     * @param args
+     */
     public static void main(String [] args) {
-        assert args.length==2 : "usage : String argument introducerIP and int argument introducer port reqd!";
+        assert args.length==2 : "usage : String argument SDFSProxy hostname and int argument SDFSProxy port reqd!";
         introIP=args[0];
         introPort=Integer.parseInt(args[1]);
-        System.out.println("Introducer IP : "+introIP+". Introducer port : "+introPort);
+        System.out.println("SDFSProxy IP : "+introIP+", SDFSProxy port : "+introPort);
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         boolean exit=false;
         while(!exit) {
@@ -33,10 +37,8 @@ public class SDFSClient {
                 if (input[0].equals("exit"))
                     exit=true;
                 else if (input[0].equals("put")) {
-                    System.out.println("put requested at time : "+System.currentTimeMillis());
                     fileOps(input[1],flattenFilename(input[2]),'p');
                 } else if (input[0].equals("get")) {
-                    System.out.println("get requested at time : "+System.currentTimeMillis());
                     fileOps(flattenFilename(input[1]),input[2],'g');
                 } else if (input[0].equals("del")) {
                     fileOps(flattenFilename(input[1]),"",'d');
@@ -54,10 +56,12 @@ public class SDFSClient {
                 e.printStackTrace();
             }
 
-            System.out.println("Request handling done at time : "+System.currentTimeMillis());
         }
     }
 
+    /**List files present in SDFS
+     * 
+     */
     private static void listfiles() {
         Pid master=getMaster();
         try {
@@ -81,26 +85,36 @@ public class SDFSClient {
                 System.out.println("ls failed. master is down!");
             }
             sock.close();
+            soIn.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
+    /**UnFlattens the file to mimic directory structure 
+     * @param fname
+     * @return unflattendFilename
+     */
     private static String unflattenFilename(String fname) {
         String ret=fname.replace("$", "/");
         return ret;
     }
 
+    /**Flatten the file to avoid slashes in name
+     * @param fname
+     * @return flattenedFilename
+     */
     private static String flattenFilename(String fname) {
         String ret=fname.replace("/", "$");
-        System.out.println("flattened file = "+ret);
         return ret;
     }
 
+    /**Get Master from SDFSProxy
+     * @return masterId
+     */
     private static Pid getMaster() {
         while (true) {
-            System.out.println("Getting Master");
             Socket sock=null;
             try {
                 sock = new Socket(introIP, introPort + ElectionPortDelta);
@@ -115,6 +129,7 @@ public class SDFSClient {
                 cs425.mp3.ElectionService.Message reply = cs425.mp3.ElectionService
                         .Message
                         .extractMessage(in.next());
+                in.close();
                 if (!reply.messageParams[0].equals("NOT_SET")) {
                     return Pid.getPid(reply.messageParams[0]);
                 }
@@ -137,10 +152,14 @@ public class SDFSClient {
         }
     }
 
+    /** Handles fileOperations in SDFS
+     * @param srcfname
+     * @param destfname
+     * @param op
+     */
     private static void fileOps(String srcfname, String destfname,char op) {
         assert op=='p' || op=='g' || op=='d' || op=='l' : "op can only be either p or g.";
         Pid master=getMaster();
-        System.out.println("master = "+master.toString());
         try {
             Socket sock=new Socket(master.hostname,master.port+MasterPortDelta);
             sock.setSoTimeout(2000);
@@ -159,13 +178,17 @@ public class SDFSClient {
             } else {
                 System.out.println("op not recognized!");
             }
-
             sock.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    /** Delete file from SDFS
+     * @param in
+     * @param out
+     * @param fname
+     */
     private static void deleteOperation(Scanner in, PrintWriter out, String fname) {
         out.println(cs425.mp3.ElectionService.Message
                 .MessageBuilder
@@ -184,6 +207,11 @@ public class SDFSClient {
         }
     }
 
+    /**List VM's having replica of srcfname
+     * @param in
+     * @param out
+     * @param srcfname
+     */
     private static void listOperation(Scanner in, PrintWriter out, String srcfname) {
         out.println(cs425.mp3.ElectionService.Message
                 .MessageBuilder
@@ -207,6 +235,12 @@ public class SDFSClient {
         }
     }
 
+    /** get VM's having file from SDFS
+     * @param soIn
+     * @param soOut
+     * @param sdfsfname
+     * @param destfname
+     */
     private static void getOperation(Scanner soIn, PrintWriter soOut, String sdfsfname, String destfname) {
         soOut.println(cs425.mp3.ElectionService.Message
                 .MessageBuilder
@@ -229,6 +263,12 @@ public class SDFSClient {
         }
     }
 
+    /**Receive File from SDFS to local
+     * @param pid
+     * @param sdfsfname
+     * @param destfname
+     * @return
+     */
     private static boolean receiveFile(Pid pid, String sdfsfname, String destfname) {
         try {
             Socket sock = new Socket(pid.hostname, pid.port+FSPortDelta);
@@ -238,8 +278,11 @@ public class SDFSClient {
             out.println(Message.createGetMessage(sdfsfname));
             out.flush();
             Message reply = Message.retrieveMessage(in.next());
-            if (reply.type.equals(MessageType.NO))
+            in.close();
+            if (reply.type.equals(MessageType.NO)){
+            	sock.close();
                 return false;
+            }
             FileOutputStream fs=new FileOutputStream(destfname);
             byte[] buffer=new byte[1024];
             DataInputStream din=new DataInputStream(sock.getInputStream());
@@ -247,7 +290,6 @@ public class SDFSClient {
             while ((readlen=din.read(buffer))!=-1) {
                 fs.write(buffer,0,readlen);
             }
-
             fs.close();
             sock.close();
         } catch (FileNotFoundException e) {
@@ -257,19 +299,22 @@ public class SDFSClient {
             e.printStackTrace();
             return false;
         }
-
         return true;
     }
 
+    /** Put file in VM's from local
+     * @param soIn
+     * @param soOut
+     * @param srcfname
+     * @param sdfsfname
+     */
     private static void putOperation(Scanner soIn, PrintWriter soOut, String srcfname, String sdfsfname) {
         soOut.println(cs425.mp3.ElectionService.Message
                 .MessageBuilder
                 .buildPutMessage(sdfsfname)
                 .toString());
         soOut.flush();
-        System.out.println("put message sent");
         String replyString=soIn.next();
-        System.out.println("reply = "+replyString);
         cs425.mp3.ElectionService.Message reply= cs425.mp3.ElectionService.Message
                 .extractMessage(replyString);
         if (reply.messageParams[0].equals("NOT_OK")) {
@@ -286,6 +331,12 @@ public class SDFSClient {
         }
     }
 
+    /**Send file from local to a VM
+     * @param fileServer
+     * @param srcfname
+     * @param sdfsfname
+     * @return
+     */
     private static boolean sendFile(Pid fileServer, String srcfname,String sdfsfname) {
         try {
             Socket sock = new Socket(fileServer.hostname, fileServer.port+FSPortDelta);
@@ -295,9 +346,11 @@ public class SDFSClient {
             out.println(Message.createPutMessage(sdfsfname));
             out.flush();
             Message reply = Message.retrieveMessage(in.next());
-            if (reply.type.equals(MessageType.NO))
-                return false;
-
+            in.close();
+            if (reply.type.equals(MessageType.NO)){
+                sock.close();
+            	return false;
+            }
             DataOutputStream fout = new DataOutputStream(sock.getOutputStream());
             byte[] buffer = new byte[1024];
             FileInputStream fileIn = new FileInputStream(srcfname);
@@ -305,7 +358,6 @@ public class SDFSClient {
             while ((readlen = fileIn.read(buffer)) != -1) {
                 fout.write(buffer, 0, readlen);
             }
-
             fout.flush();
             fileIn.close();
             sock.close();
@@ -313,7 +365,6 @@ public class SDFSClient {
             e.printStackTrace();
             return false;
         }
-
         return true;
     }
 }

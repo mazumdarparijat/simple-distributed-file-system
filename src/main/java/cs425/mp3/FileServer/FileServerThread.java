@@ -8,8 +8,8 @@ import java.net.Socket;
 import java.util.Scanner;
 import java.util.Set;
 
-/**
- * Created by parijatmazumdar on 03/11/15.
+/**Thread Class for handling file read and Write requests
+ *
  */
 class FileServerThread extends Thread {
     private static final int MasterPortDelta=3;
@@ -32,14 +32,19 @@ class FileServerThread extends Thread {
             e.printStackTrace();
         }
     }
-
-
+    /** Replicate file from source
+     * @param fileName
+     * @param ipAddress
+     * @param port
+     * @return
+     */
     private boolean replicateSDFSFile(String fileName, String ipAddress, int port) {
         Socket socket=null;
+        Scanner soIn=null;
         try {
             socket=new Socket(ipAddress,port);
             socket.setSoTimeout(2000);
-            Scanner soIn=new Scanner(new InputStreamReader(socket.getInputStream()));
+            soIn=new Scanner(new InputStreamReader(socket.getInputStream()));
             soIn.useDelimiter("\n");
             PrintWriter soOut=new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
             soOut.println(Message.createGetMessage(fileName));
@@ -55,6 +60,7 @@ class FileServerThread extends Thread {
         } finally {
             try {
                 socket.close();
+                soIn.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -62,7 +68,9 @@ class FileServerThread extends Thread {
 
         return true;
     }
-
+    /**Send file to other process
+     * @param filename
+     */
     private void sendSDFSFile(String filename) {
         try {
             DataOutputStream out=new DataOutputStream(socket.getOutputStream());
@@ -82,6 +90,9 @@ class FileServerThread extends Thread {
         }
     }
 
+    /**Handle fileOp requests from other processes
+     * 
+     */
     private void handleRequest() {
         try {
             Scanner in=new Scanner(new InputStreamReader(socket.getInputStream()));
@@ -123,12 +134,17 @@ class FileServerThread extends Thread {
                 closeSocket();
                 System.exit(1);
             }
+            in.close();
         } catch (IOException e) {
             closeSocket();
             e.printStackTrace();
         }
     }
-
+    /**Receive SDFS file
+     * @param socket
+     * @param fileName
+     * @throws InterruptedIOException
+     */
     private void createSDFSFile(Socket socket, String fileName) throws InterruptedIOException {
         try {
             FileOutputStream fs=new FileOutputStream(FileServer.baseDir+fileName);
@@ -150,6 +166,9 @@ class FileServerThread extends Thread {
         }
     }
 
+    /**Notify new file to Master
+     * @param fileName
+     */
     private void notifyFileAdd(String fileName) {
         Pid master=sdfsserverMain.ES.getMasterPid();
         try {
