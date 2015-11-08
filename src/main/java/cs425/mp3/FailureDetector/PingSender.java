@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 
  */
 public class PingSender extends Thread{
-    private static final int SUBGROUP_K=2;
+    private static final int SUBGROUP_K=4;
 	private final DatagramSocket socket;
     private final long pingTimeOut;
     private final long protocolTime;
