@@ -44,7 +44,7 @@ public class MasterTracker {
 		return response;
 	}
 	private void handleMessage(String msg, Socket clientSocket) throws IOException{
-		System.out.println("[DEBUG][Election]: Recieved Message "+msg);
+		System.out.println("[DEBUG][Election]: Recieved Message "+msg+" at time "+String.valueOf(System.currentTimeMillis()));
 		Message m=Message.extractMessage(msg);
 		if(m.type==MessageType.MASTER){
 			String masterID="NOT_SET";

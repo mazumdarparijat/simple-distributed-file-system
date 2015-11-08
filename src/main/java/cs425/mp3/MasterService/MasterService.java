@@ -77,7 +77,7 @@ public class MasterService {
 		return response;
 	}
 	private void handleMessage(String msg, Socket clientSocket) throws IOException{
-		System.out.println("[DEBUG][MASTER]: Message Recieved "+msg);
+		System.out.println("[DEBUG][MASTER]: Message Recieved "+msg +" at time "+String.valueOf(System.currentTimeMillis()));
 		Message m=Message.extractMessage(msg);
 		if(m.type==MessageType.OK){
 
