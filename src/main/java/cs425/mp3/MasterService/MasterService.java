@@ -27,7 +27,7 @@ import cs425.mp3.ElectionService.Message.MessageBuilder;
 import cs425.mp3.FailureDetector.FailureDetector;
 
 public class MasterService {
-	private int REPLICATION_TIMEOUT = 20000000;
+	private int REPLICATION_TIMEOUT = 3000;
 	private int REPLICATION_UNIT=3;
 	private int SERVER_TIMEOUT=100;
 	private FailureDetector FD;
