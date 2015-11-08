@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.Serializable;
 
 /**
- * Created by parijatmazumdar on 02/11/15.
+ * Annum for Type of messages
  */
 public enum MessageType implements Serializable {
     GET ("G"),
@@ -23,7 +23,11 @@ public enum MessageType implements Serializable {
     public String toString() {
         return messagePrefix;
     }
-
+    /** Get message type from message
+     * @param prefix
+     * @return
+     * @throws IOException
+     */
     public static MessageType fromString(String string) throws IOException {
         if (string.equals("G"))
             return MessageType.GET;

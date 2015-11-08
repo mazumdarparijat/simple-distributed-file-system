@@ -1,7 +1,5 @@
 package cs425.mp3.FailureDetector;
-
 import cs425.mp3.Pid;
-
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -110,6 +108,7 @@ public class FDIntroducer extends FailureDetector {
                     outputWriter = new PrintWriter(new OutputStreamWriter(joinRequest.getOutputStream()));
                 } catch (IOException e) {
                     System.err.println("[ERROR] Error creating input stream from socket");
+                    inputReader.close();
                     return;
                 }
 
@@ -123,6 +122,7 @@ public class FDIntroducer extends FailureDetector {
 
                 try {
                     joinRequest.close();
+                    inputReader.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -133,7 +133,6 @@ public class FDIntroducer extends FailureDetector {
                         + (int) getSpreadTime(membershipSet.size()));
                 System.out.println(joinerID + " join added to infoBuffer");
             }
-
             try {
                 tcp.close();
             } catch (IOException e) {

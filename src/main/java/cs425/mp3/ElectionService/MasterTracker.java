@@ -29,6 +29,11 @@ public class MasterTracker {
 			System.exit(-1);
 		}
 	}
+	/**SendMessage to clientSocket
+	 * @param clientSocket
+	 * @param msg
+	 * @return
+	 */
 	private String sendMessage(Socket clientSocket, String msg) {
 		String response=null;
 		try {
@@ -43,6 +48,11 @@ public class MasterTracker {
 		}
 		return response;
 	}
+	/**Handle reply from clientSocket
+	 * @param msg
+	 * @param clientSocket
+	 * @throws IOException
+	 */
 	private void handleMessage(String msg, Socket clientSocket) throws IOException{
 		System.out.println("[DEBUG][Election]: Recieved Message "+msg+" at time "+String.valueOf(System.currentTimeMillis()));
 		Message m=Message.extractMessage(msg);
@@ -63,6 +73,10 @@ public class MasterTracker {
 			sendMessage(clientSocket,msgreply);
 		}
 	}
+	
+	/**Launch Master Tracker
+	 * 
+	 */
 	public void startMT() {
 		while(true){
 			try{
@@ -80,6 +94,9 @@ public class MasterTracker {
 			}
 		}
 	}
+	/**Getter method for master
+	 * @return
+	 */
 	public String getMaster(){
 		return master;
 	}

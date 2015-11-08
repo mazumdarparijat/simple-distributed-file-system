@@ -26,6 +26,9 @@ import cs425.mp3.ElectionService.MessageType;
 import cs425.mp3.ElectionService.Message.MessageBuilder;
 import cs425.mp3.FailureDetector.FailureDetector;
 
+/**Class for Master Service
+ *
+ */
 public class MasterService {
 	private int REPLICATION_TIMEOUT = 3000;
 	private int REPLICATION_UNIT=3;
@@ -33,6 +36,10 @@ public class MasterService {
 	private FailureDetector FD;
 	private ServerSocket welcomeSocket;
 	private HashMap<String,MutablePair<Set <String>, Long>> filemap;
+	/**Update file meta data
+	 * @param serverid
+	 * @param filename
+	 */
 	private void updateFileMap(String serverid, String filename){
 		if(filemap.containsKey(filename)){
 			filemap.get(filename).getLeft().add(serverid);
@@ -45,6 +52,9 @@ public class MasterService {
 			filemap.put(filename, new MutablePair<Set<String>,Long>(s,timestamp));
 		}
 	}
+	/**Update files in local FS
+	 * @param filenames
+	 */
 	public void updateSelfFiles(List<String> filenames){
 		for(String filename: filenames){
 			updateFileMap(FD.getSelfID().toString(),filename);
@@ -62,6 +72,11 @@ public class MasterService {
 			System.exit(-1);
 		}
 	}
+	/**Send file to clientSocket
+	 * @param clientSocket
+	 * @param msg
+	 * @return
+	 */
 	private String sendMessage(Socket clientSocket, String msg) {
 		String response=null;
 		try {
@@ -76,6 +91,11 @@ public class MasterService {
 		}
 		return response;
 	}
+	/**Handle reply from clientSocket
+	 * @param msg
+	 * @param clientSocket
+	 * @throws IOException
+	 */
 	private void handleMessage(String msg, Socket clientSocket) throws IOException{
 		System.out.println("[DEBUG][MASTER]: Message Recieved "+msg +" at time "+String.valueOf(System.currentTimeMillis()));
 		Message m=Message.extractMessage(msg);
@@ -157,6 +177,11 @@ public class MasterService {
 			throw new IOException("Message not recognized");
 		}
 	} 
+	/**Communicate info to other process in group
+	 * @param add
+	 * @param port
+	 * @param msg
+	 */
 	void communicate(String add, int port, String msg){
 		try{
 			Socket clientSocket=new Socket(add,port);
@@ -170,12 +195,18 @@ public class MasterService {
 			System.out.println("[ERROR][Election]: Unable to communicate with "+add+" on port "+port);
 		}
 	}
+	/**Inform SDFSProxy about current master
+	 * 
+	 */
 	private void informIntro(){
 			String msg=MessageBuilder.buildCoordMessage(FD.getSelfID().pidStr).toString(); 
 			communicate(sdfsserverMain.intro_address,
 					sdfsserverMain.intro_port+sdfsserverMain.ESPortDelta,
 					msg);
 	}
+	/**Check if files need replication
+	 * 
+	 */
 	private void checkReplication(){
 		System.out.println("[DEBUG][MASTER]: Checking Replication");
 		Random rn = new Random();
@@ -225,6 +256,9 @@ public class MasterService {
 			}
 		}
 	}
+	/**Launch Master service
+	 * 
+	 */
 	public void startMS(){
 		boolean introducer_state=true;
 		while(true){
