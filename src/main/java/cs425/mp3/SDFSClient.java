@@ -22,7 +22,7 @@ public class SDFSClient {
         assert args.length==2 : "usage : String argument introducerIP and int argument introducer port reqd!";
         introIP=args[0];
         introPort=Integer.parseInt(args[1]);
-        System.out.println("Introducer IP : "+introIP+". Introducer port : "+introPort);
+        //System.out.println("Introducer IP : "+introIP+". Introducer port : "+introPort);
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         boolean exit=false;
         while(!exit) {
@@ -33,10 +33,10 @@ public class SDFSClient {
                 if (input[0].equals("exit"))
                     exit=true;
                 else if (input[0].equals("put")) {
-                    System.out.println("put requested at time : "+System.currentTimeMillis());
+                    //System.out.println("put requested at time : "+System.currentTimeMillis());
                     fileOps(input[1],flattenFilename(input[2]),'p');
                 } else if (input[0].equals("get")) {
-                    System.out.println("get requested at time : "+System.currentTimeMillis());
+                    //System.out.println("get requested at time : "+System.currentTimeMillis());
                     fileOps(flattenFilename(input[1]),input[2],'g');
                 } else if (input[0].equals("del")) {
                     fileOps(flattenFilename(input[1]),"",'d');
@@ -54,7 +54,7 @@ public class SDFSClient {
                 e.printStackTrace();
             }
 
-            System.out.println("Request handling done at time : "+System.currentTimeMillis());
+           // System.out.println("Request handling done at time : "+System.currentTimeMillis());
         }
     }
 
@@ -94,13 +94,13 @@ public class SDFSClient {
 
     private static String flattenFilename(String fname) {
         String ret=fname.replace("/", "$");
-        System.out.println("flattened file = "+ret);
+        //System.out.println("flattened file = "+ret);
         return ret;
     }
 
     private static Pid getMaster() {
         while (true) {
-            System.out.println("Getting Master");
+            //System.out.println("Getting Master");
             Socket sock=null;
             try {
                 sock = new Socket(introIP, introPort + ElectionPortDelta);
@@ -140,7 +140,7 @@ public class SDFSClient {
     private static void fileOps(String srcfname, String destfname,char op) {
         assert op=='p' || op=='g' || op=='d' || op=='l' : "op can only be either p or g.";
         Pid master=getMaster();
-        System.out.println("master = "+master.toString());
+        //System.out.println("master = "+master.toString());
         try {
             Socket sock=new Socket(master.hostname,master.port+MasterPortDelta);
             sock.setSoTimeout(2000);
@@ -267,9 +267,9 @@ public class SDFSClient {
                 .buildPutMessage(sdfsfname)
                 .toString());
         soOut.flush();
-        System.out.println("put message sent");
+        //System.out.println("put message sent");
         String replyString=soIn.next();
-        System.out.println("reply = "+replyString);
+        //System.out.println("reply = "+replyString);
         cs425.mp3.ElectionService.Message reply= cs425.mp3.ElectionService.Message
                 .extractMessage(replyString);
         if (reply.messageParams[0].equals("NOT_OK")) {
