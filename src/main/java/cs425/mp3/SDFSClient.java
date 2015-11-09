@@ -116,9 +116,10 @@ public class SDFSClient {
     private static Pid getMaster() {
         while (true) {
             Socket sock=null;
+            Scanner in=null;
             try {
                 sock = new Socket(introIP, introPort + ElectionPortDelta);
-                Scanner in = new Scanner(new InputStreamReader(sock.getInputStream()));
+                in = new Scanner(new InputStreamReader(sock.getInputStream()));
                 in.useDelimiter("\n");
                 PrintWriter out = new PrintWriter(new OutputStreamWriter(sock.getOutputStream()));
                 out.println(cs425.mp3.ElectionService.Message
@@ -129,7 +130,6 @@ public class SDFSClient {
                 cs425.mp3.ElectionService.Message reply = cs425.mp3.ElectionService
                         .Message
                         .extractMessage(in.next());
-                in.close();
                 if (!reply.messageParams[0].equals("NOT_SET")) {
                     return Pid.getPid(reply.messageParams[0]);
                 }
@@ -138,6 +138,7 @@ public class SDFSClient {
             } finally {
                 try {
                     sock.close();
+                    in.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -160,6 +161,7 @@ public class SDFSClient {
     private static void fileOps(String srcfname, String destfname,char op) {
         assert op=='p' || op=='g' || op=='d' || op=='l' : "op can only be either p or g.";
         Pid master=getMaster();
+        System.out.println("Master = "+master.toString());
         try {
             Socket sock=new Socket(master.hostname,master.port+MasterPortDelta);
             sock.setSoTimeout(2000);
@@ -278,9 +280,9 @@ public class SDFSClient {
             out.println(Message.createGetMessage(sdfsfname));
             out.flush();
             Message reply = Message.retrieveMessage(in.next());
-            in.close();
             if (reply.type.equals(MessageType.NO)){
             	sock.close();
+                in.close();
                 return false;
             }
             FileOutputStream fs=new FileOutputStream(destfname);
@@ -292,6 +294,7 @@ public class SDFSClient {
             }
             fs.close();
             sock.close();
+            in.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             return false;
@@ -317,6 +320,7 @@ public class SDFSClient {
         String replyString=soIn.next();
         cs425.mp3.ElectionService.Message reply= cs425.mp3.ElectionService.Message
                 .extractMessage(replyString);
+        System.out.println("reply="+replyString);
         if (reply.messageParams[0].equals("NOT_OK")) {
             System.out.println("Put operation cannot be completed. File already exists in sdfs");
         } else {
@@ -346,7 +350,6 @@ public class SDFSClient {
             out.println(Message.createPutMessage(sdfsfname));
             out.flush();
             Message reply = Message.retrieveMessage(in.next());
-            in.close();
             if (reply.type.equals(MessageType.NO)){
                 sock.close();
             	return false;
