@@ -37,7 +37,7 @@ public class SDFSClient {
                 if (input[0].equals("exit"))
                     exit=true;
                 else if (input[0].equals("put")) {
-                    fileOps(input[1],flattenFilename(input[2]),'p');
+                    fileOps(input[1], flattenFilename(input[2]), 'p');
                 } else if (input[0].equals("get")) {
                     fileOps(flattenFilename(input[1]),input[2],'g');
                 } else if (input[0].equals("del")) {
@@ -49,6 +49,8 @@ public class SDFSClient {
                 } else {
                     System.out.println("argument not recognized. Try again");
                 }
+
+                System.out.println("request completed");
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (ArrayIndexOutOfBoundsException e) {
@@ -161,7 +163,6 @@ public class SDFSClient {
     private static void fileOps(String srcfname, String destfname,char op) {
         assert op=='p' || op=='g' || op=='d' || op=='l' : "op can only be either p or g.";
         Pid master=getMaster();
-        System.out.println("Master = "+master.toString());
         try {
             Socket sock=new Socket(master.hostname,master.port+MasterPortDelta);
             sock.setSoTimeout(2000);
@@ -320,7 +321,6 @@ public class SDFSClient {
         String replyString=soIn.next();
         cs425.mp3.ElectionService.Message reply= cs425.mp3.ElectionService.Message
                 .extractMessage(replyString);
-        System.out.println("reply="+replyString);
         if (reply.messageParams[0].equals("NOT_OK")) {
             System.out.println("Put operation cannot be completed. File already exists in sdfs");
         } else {
